@@ -14,9 +14,11 @@ The goal is also to eventually have all recipes work, at which point we can migr
 
 ### Recipe tree structure
 
-The goal is to be inspired by the [FreeBSD](https://www.freebsd.org/ports/) [ports tree](https://cgit.freebsd.org/ports) and [SolusOS2](https://github.com/SolusOS-discontinued/packages) and see where that gets us.
+The goal is to be inspired by the [SolusOS2](https://github.com/SolusOS-discontinued/packages) organisation and the [FreeBSD](https://www.freebsd.org/ports/) [ports tree](https://cgit.freebsd.org/ports) and see where that gets us.
 
-We're going to aim for consensus decisions to begin with, so everyone is expected to keep things civil.
+Note that `base/` is reserved for critical, self-hosting systemd-nspawn container stuff that must always be in working order. A good example would be `readline`, because shells and compilers included in the self-hosting systemd-nspawn containers set rely on it.
+
+We're going to aim for consensus decisions to begin with, so everyone is expected to keep things civil. That said, if the BDFL chips in, his decisions take precedence.
 
 ### Package wishlist
 
