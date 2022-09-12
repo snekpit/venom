@@ -26,7 +26,21 @@ The other thing to do is to look at the macro _%actions_ and _%(definitions)_ in
 
 The naming of concepts has been tweaked compared to what some of you might be used to, with the primary purpose being more sensible and clear semantics in terms of natural speech and its supporting mental models.
 
-Finally, it might be worth pointing out that _this is not $otheros!_. You are encouraged to forget everything you thought you knew about how things are supposed to work and be open to the different goals of Serpent OS which spawned the tooling you're about to use.
+Additionally, it might be worth pointing out that _this is not $otheros!_.
+
+You are encouraged to forget everything you thought you knew about how things are supposed to work and be open to the different goals of Serpent OS which spawned the tooling you're about to use.  The fully fleshed out workflow is also not yet ready for you to use, so things will feel rather manual initially.
+
+To get a basic recipe, use `boulder new -h` to get started. And no, boulder does not yet support git sources (the help info is lying to you!).
+
+## Recipe licensing
+
+We strongly prefer the Zlib license on code and recipes. `boulder new` has been updated to use a REUSE compliant Zlib header, but existing recipes will need to be updated with the following verbiage at the top:
+
+    #
+    # SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+    #
+    # SPDX-License-Identifier: Zlib
+    #
 
 ## Wishlist items
 
