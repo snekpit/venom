@@ -50,8 +50,3 @@ We strongly prefer the Zlib license on code and recipes. `boulder new` has been 
     # SPDX-License-Identifier: Zlib
     #
 
-## Wishlist items
-
-- [x] golang (broken)
-- [ ] readline (basis for a lot of stuff)
-- 
