@@ -1,6 +1,6 @@
 # venom
 
-Early bringup recipes that demonstrate repros for papercuts/issues in the Serpent OS tooling.
+Early bringup recipes that demonstrate suitability for purpose of the Serpent OS tooling.
 
 This is a draft repo which will be deleted at some point in the not too distant future. Plan accordingly and don't get too attached to your work here.
 
