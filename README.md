@@ -22,7 +22,7 @@ We're going to aim for consensus decisions to begin with, so everyone is expecte
 
 As the state of the tooling is still in flux, the best thing to do to get an idea for how things work is to look at the protosnek recipes which have been transplanted into the [main snekpit recipe repo](https://github.com/snekpit/main).
 
-The other thing to do is to look at the macro _%actions_ and _%(definitions)_ in the [boulder code repo](https://github.com/serpent-os/boulder/tree/main/data/macros).
+The other thing to do is to look at the macro `%actions` and `%(definitions) in the [boulder code repo](https://github.com/serpent-os/boulder/tree/main/data/macros).
 
 The naming of concepts has been tweaked compared to what some of you might be used to, with the primary purpose being more sensible and clear semantics in terms of natural speech and its supporting mental models.
 
