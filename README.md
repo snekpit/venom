@@ -12,6 +12,10 @@ The point of this repository is to have a collection of draft-quality recipes wi
 
 The goal is to eventually have all recipes work, at which point we can migrate them to either the main or the community recipe repos (depending on applicability)
 
+There's a package list in [issue #1](https://github.com/snekpit/venom/issues/1)
+
+If you encounter specific issues with moss or boulder, report them first in the serpentos-devel matrix channel and then go from there in terms of potentially capturing issues for the relevant tool in their respective code repos.
+
 ## Structure
 
 The goal is to be inspired by FreeBSD and [SolusOS2](https://github.com/SolusOS-discontinued/packages) and see where that gets us.
@@ -49,4 +53,3 @@ We strongly prefer the Zlib license on code and recipes. `boulder new` has been 
     #
     # SPDX-License-Identifier: Zlib
     #
-
