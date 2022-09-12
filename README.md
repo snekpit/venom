@@ -32,9 +32,17 @@ You are encouraged to forget everything you thought you knew about how things ar
 
 To get a basic recipe, use `boulder new -h` to get started. And no, boulder does not yet support git sources (the help info is lying to you!).
 
-## Recipe licensing
+### What to commit
 
-We strongly prefer the Zlib license on code and recipes. `boulder new` has been updated to use a REUSE compliant Zlib header, but existing recipes will need to be updated with the following verbiage at the top:
+    git add stone.yml manifest.bin manifest.json
+
+- manifest.bin : Binary moss readable file used to create moss index files for dep resolution etc.
+- manifest.json: Human readable version of manifest.bin used for git diff introspection purposes
+- stone.yml    : The actual build recipe
+
+### Recipe licensing
+
+We strongly prefer the Zlib license on code and recipes. `boulder new` has been updated to use a REUSE compliant Zlib header, but existing recipes will need to be updated with the following REUSE-compliant verbiage at the top:
 
     #
     # SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
