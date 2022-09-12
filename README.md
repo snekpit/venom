@@ -26,7 +26,7 @@ The other thing to do is to look at the macro _%actions_ and _%(definitions)_ in
 
 The naming of concepts has been tweaked compared to what some of you might be used to, with the primary purpose being more sensible and clear semantics in terms of natural speech and its supporting mental models.
 
-Additionally, it might be worth pointing out that _this is not $otheros!_.
+Additionally, it might be worth pointing out that _this is not $otheros!_
 
 You are encouraged to forget everything you thought you knew about how things are supposed to work and be open to the different goals of Serpent OS which spawned the tooling you're about to use.  The fully fleshed out workflow is also not yet ready for you to use, so things will feel rather manual initially.
 
