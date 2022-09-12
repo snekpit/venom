@@ -36,7 +36,7 @@ To get a basic recipe, use `boulder new -h` to get started. And no, boulder does
 
     git add stone.yml manifest.bin manifest.json
 
-- manifest.bin : Binary moss readable file used to create moss index files for dep resolution etc.
+- manifest.bin : Binary moss readable file used to create moss collection stone.index files for dep resolution etc.
 - manifest.json: Human readable version of manifest.bin used for git diff introspection purposes
 - stone.yml    : The actual build recipe
 
