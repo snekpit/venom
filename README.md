@@ -1,6 +1,6 @@
 # venom
 
-Early bringup recipes that demonstrate suitability for purpose of the Serpent OS tooling.
+Early bringup recipes intended to demonstrate fitness for purpose of the Serpent OS tooling.
 
 This is a draft repo which will be deleted at some point in the not too distant future. Plan accordingly and don't get too attached to your work here.
 
@@ -10,7 +10,7 @@ Terminal-only goodies that add value in a bootable systemd-nspawn container cont
 
 The point of this repository is to have a collection of draft-quality recipes with which to flush out bugs and generate feature requests + PRs related to the tooling.
 
-The goal is to eventually have all recipes work, at which point we can migrate them to either the main or the community recipe repos (depending on applicability)
+The goal is also to eventually have all recipes work, at which point we can migrate them to either the main or the community recipe repos (depending on applicability)
 
 There's a package list in [issue #1](https://github.com/snekpit/venom/issues/1)
 
