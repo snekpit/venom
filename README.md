@@ -12,15 +12,17 @@ The point of this repository is to have a collection of draft-quality recipes wi
 
 The goal is also to eventually have all recipes work, at which point we can migrate them to either the main or the community recipe repos (depending on applicability)
 
+### Recipe tree structure
+
+The goal is to be inspired by the [FreeBSD](https://www.freebsd.org/ports/) [ports tree](https://cgit.freebsd.org/ports) and [SolusOS2](https://github.com/SolusOS-discontinued/packages) and see where that gets us.
+
+We're going to aim for consensus decisions to begin with, so everyone is expected to keep things civil.
+
+### Package wishlist
+
 There's a package list in [issue #1](https://github.com/snekpit/venom/issues/1)
 
-If you encounter specific issues with moss or boulder, report them first in the serpentos-devel matrix channel and then go from there in terms of potentially capturing issues for the relevant tool in their respective code repos.
-
-## Structure
-
-The goal is to be inspired by FreeBSD and [SolusOS2](https://github.com/SolusOS-discontinued/packages) and see where that gets us.
-
-We're going to aim for consensus decisions to begin with, so everyone is expected to keep civil.
+If you encounter specific issues with moss or boulder, report them first in the serpentos-dev matrix channel in our [matrix space](https://matrix.to/#/!trFJOzhpDUejJKnPYg:matrix.org) and then go from there in terms of potentially capturing issues for the relevant tool in their respective code repos.
 
 ## Documentation
 
@@ -33,6 +35,8 @@ The naming of concepts has been tweaked compared to what some of you might be us
 Additionally, it might be worth pointing out that _this is not $otheros!_
 
 You are encouraged to forget everything you thought you knew about how things are supposed to work and be open to the different goals of Serpent OS which spawned the tooling you're about to use.  The fully fleshed out workflow is also not yet ready for you to use, so things will feel rather manual initially.
+
+### How to get started writing a recipe
 
 To get a basic recipe, use `boulder new -h` to get started. And no, boulder does not yet support git sources (the help info is lying to you!).
 
