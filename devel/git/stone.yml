@@ -1,0 +1,31 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : git
+version     : 2.37.3
+release     : 2
+summary     : Fast, scalable, distributed revision control system
+license     : GPL-2.0-only
+homepage    : https://git-scm.com
+description : |
+    Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.
+upstreams   :
+    - https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.37.3.tar.xz: 814641d7f61659cfbc17825d0462499ca1403e39ff53d76a8512050e6483e87a
+builddeps   :
+    - make
+    - libxcrypt-devel
+    - curl-devel
+    - expat-devel
+    - zlib-devel
+    - binary(msgfmt)
+    - pkgconfig(openssl)
+setup       : |
+    %configure --disable-static \
+        --with-editor=/usr/bin/nano \
+        --without-tcltk
+build       : |
+    %make
+install     : |
+    %make_install

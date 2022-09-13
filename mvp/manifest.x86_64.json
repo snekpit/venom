@@ -1,0 +1,14 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.1",
+	"packages": {
+		"mvp": {
+			"files": [
+				"/usr/share/defaults/etc/teapot"
+			]
+		}
+	},
+	"source-name": "mvp",
+	"source-release": "1",
+	"source-version": "1"
+}

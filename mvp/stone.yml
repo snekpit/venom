@@ -1,0 +1,34 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : mvp
+version     : "1"
+release     : 1
+summary     : Virtual package that depends on basic system packages
+license     : ZLIB
+homepage    : https://github.com/serpent-os
+rundeps   :
+    - bash
+    - coreutils
+    - curl
+    - dash
+    - dbus
+    - dbus-broker
+    - git
+    - grep
+    - gzip
+    - less
+    - nano
+    - nss
+    - procps-ng
+    - python
+    - sed
+    - shadow
+    - systemd
+    - util-linux
+    - unzip
+    - which
+install     : |
+    %install_file %(pkgdir)/teapot %(installroot)/%(vendordir)/teapot

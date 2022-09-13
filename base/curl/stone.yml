@@ -1,0 +1,32 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : curl
+version     : 7.85.0
+release     : 2
+summary     : A utility for fetching files from remote servers
+license     : MIT
+homepage    : https://curl.se/
+description : |
+    A utility for fetching files from remote servers.
+upstreams   :
+    - https://github.com/curl/curl/releases/download/curl-7_85_0/curl-7.85.0.tar.xz: 88b54a6d4b9a48cb4d873c7056dcba997ddd5b7be5a2d537a4acb55c20b04be6
+builddeps   :
+    - make
+    - libcxx-devel
+    - jansson-devel
+    - nghttp2-devel
+    - openssl-devel
+    - zlib-devel
+    - zstd-devel
+    - pkgconfig(libbrotlidec)
+setup       : |
+    %configure --disable-static \
+        --with-openssl \
+        --with-ca-bundle=%(vendordir)/ssl/certs/ca-certificates.crt
+build       : |
+    %make
+install     : |
+    %make_install
