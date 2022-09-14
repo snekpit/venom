@@ -1,0 +1,33 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.1",
+	"packages": {
+		"bzip2": {
+			"files": [
+				"/usr/bin/bunzip2",
+				"/usr/bin/bzcat",
+				"/usr/bin/bzdiff",
+				"/usr/bin/bzgrep",
+				"/usr/bin/bzip2",
+				"/usr/bin/bzip2recover",
+				"/usr/bin/bzmore",
+				"/usr/lib/libbz2.so.1.0",
+				"/usr/lib/libbz2.so.1.0.8",
+				"/usr/share/man/man1/bunzip2.1",
+				"/usr/share/man/man1/bzcat.1",
+				"/usr/share/man/man1/bzip2.1",
+				"/usr/share/man/man1/bzip2recover.1"
+			]
+		},
+		"bzip2-devel": {
+			"files": [
+				"/usr/include/bzlib.h",
+				"/usr/lib/libbz2.so",
+				"/usr/lib/pkgconfig/bzip2.pc"
+			]
+		}
+	},
+	"source-name": "bzip2",
+	"source-release": "2",
+	"source-version": "1.0.8"
+}

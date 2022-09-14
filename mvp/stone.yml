@@ -7,7 +7,7 @@ name        : mvp
 version     : "1"
 release     : 1
 summary     : Virtual package that depends on basic system packages
-license     : ZLIB
+license     : Zlib
 homepage    : https://github.com/serpent-os
 rundeps   :
     - bash
@@ -31,4 +31,6 @@ rundeps   :
     - unzip
     - which
 install     : |
+    # This is 100% temporary. Boulder does not yet support empty AKA virtual packages, so 
+    #  use a payload unlikely to conflict with any other package to work around that.
     %install_file %(pkgdir)/teapot %(installroot)/%(vendordir)/teapot
