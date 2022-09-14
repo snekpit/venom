@@ -1,0 +1,117 @@
+From 5ad621bce2ec28f97706e58979b328f98367fd3f Mon Sep 17 00:00:00 2001
+From: Siteshwar Vashisht <svashisht@redhat.com>
+Date: Mon, 17 Jan 2022 21:27:26 +0100
+Subject: [PATCH] Add pkg-config configurations for libhistory
+
+---
+ MANIFEST      |  1 +
+ Makefile.in   |  8 ++++++--
+ configure     |  3 ++-
+ configure.ac  |  2 +-
+ history.pc.in | 12 ++++++++++++
+ 5 files changed, 22 insertions(+), 4 deletions(-)
+ create mode 100644 history.pc.in
+
+diff --git a/MANIFEST b/MANIFEST
+index ad49d66..5da0afa 100644
+--- a/MANIFEST
++++ b/MANIFEST
+@@ -21,6 +21,7 @@ configure	f
+ configure.ac	f
+ Makefile.in	f
+ readline.pc.in	f
++history.pc.in	f
+ ansi_stdlib.h	f
+ chardefs.h	f
+ colors.h	f
+diff --git a/Makefile.in b/Makefile.in
+index c57db60..2120daa 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -149,7 +149,7 @@ DOCUMENTATION = $(DOCSOURCE) $(DOCOBJECT) $(DOCSUPPORT)
+ 
+ CREATED_MAKEFILES = Makefile doc/Makefile examples/Makefile shlib/Makefile
+ CREATED_CONFIGURE = config.status config.h config.cache config.log \
+-		    stamp-config stamp-h readline.pc
++		    stamp-config stamp-h readline.pc history.pc
+ CREATED_TAGS = TAGS tags
+ 
+ INSTALLED_HEADERS = readline.h chardefs.h keymaps.h history.h tilde.h \
+@@ -243,10 +243,11 @@ maybe-uninstall-headers: uninstall-headers
+ 
+ install-pc: installdirs
+ 	-$(INSTALL_DATA) $(BUILD_DIR)/readline.pc $(DESTDIR)$(pkgconfigdir)/readline.pc
++	-$(INSTALL_DATA) $(BUILD_DIR)/history.pc $(DESTDIR)$(pkgconfigdir)/history.pc
+ 
+ uninstall-pc:
+ 	-test -n "$(pkgconfigdir)" && cd $(DESTDIR)$(pkgconfigdir) && \
+-		${RM} readline.pc
++		${RM} readline.pc history.pc
+ 
+ maybe-uninstall-pc: uninstall-pc
+ 
+@@ -324,6 +325,9 @@ distclean maintainer-clean: clean
+ readline.pc:	config.status $(srcdir)/readline.pc.in
+ 	$(SHELL) config.status
+ 
++history.pc:	config.status $(srcdir)/history.pc.in
++	$(SHELL) config.status
++
+ info dvi html pdf ps:
+ 	-( cd doc && $(MAKE) $(MFLAGS) $@ )
+ 
+diff --git a/configure b/configure
+index 5a0bf2f..fe5d4b4 100755
+--- a/configure
++++ b/configure
+@@ -6941,7 +6941,7 @@ CFLAGS="$CFLAGS $STYLE_CFLAGS"
+ 
+ 
+ 
+-ac_config_files="$ac_config_files Makefile doc/Makefile examples/Makefile shlib/Makefile readline.pc"
++ac_config_files="$ac_config_files Makefile doc/Makefile examples/Makefile shlib/Makefile readline.pc history.pc"
+ 
+ ac_config_commands="$ac_config_commands default"
+ 
+@@ -7645,6 +7645,7 @@ do
+     "examples/Makefile") CONFIG_FILES="$CONFIG_FILES examples/Makefile" ;;
+     "shlib/Makefile") CONFIG_FILES="$CONFIG_FILES shlib/Makefile" ;;
+     "readline.pc") CONFIG_FILES="$CONFIG_FILES readline.pc" ;;
++    "history.pc") CONFIG_FILES="$CONFIG_FILES history.pc" ;;
+     "default") CONFIG_COMMANDS="$CONFIG_COMMANDS default" ;;
+ 
+   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
+diff --git a/configure.ac b/configure.ac
+index 147bae5..070c891 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -328,7 +328,7 @@ AC_SUBST(LIBVERSION)
+ AC_SUBST(TERMCAP_LIB)
+ AC_SUBST(TERMCAP_PKG_CONFIG_LIB)
+ 
+-AC_OUTPUT([Makefile doc/Makefile examples/Makefile shlib/Makefile readline.pc],
++AC_OUTPUT([Makefile doc/Makefile examples/Makefile shlib/Makefile readline.pc history.pc],
+ [
+ # Makefile uses this timestamp file to record whether config.h is up to date.
+ echo > stamp-h
+diff --git a/history.pc.in b/history.pc.in
+new file mode 100644
+index 0000000..aa4a0c9
+--- /dev/null
++++ b/history.pc.in
+@@ -0,0 +1,12 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++
++Name: History
++Description: Gnu History library for managing the text of previously typed lines
++URL: http://tiswww.cwru.edu/php/chet/readline/rltop.html
++Version: @LIBVERSION@
++Requires.private: @TERMCAP_PKG_CONFIG_LIB@
++Libs: -L${libdir} -lhistory
++Cflags: -I${includedir}
+-- 
+2.31.1
+
