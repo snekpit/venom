@@ -4,8 +4,6 @@
 	"packages": {
 		"nghttp2": {
 			"files": [
-				"/usr/bin",
-				"/usr/lib/libnghttp2.la",
 				"/usr/lib/libnghttp2.so.14",
 				"/usr/lib/libnghttp2.so.14.23.0",
 				"/usr/share/doc/nghttp2/README.rst",
@@ -26,6 +24,6 @@
 		}
 	},
 	"source-name": "nghttp2",
-	"source-release": "1",
+	"source-release": "2",
 	"source-version": "1.49.0"
 }
