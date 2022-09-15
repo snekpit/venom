@@ -16,13 +16,14 @@ license     :
     - GPL-3.0-or-later
 builddeps   :
     - pkgconfig(libbrotlidec)
+    - pkgconfig(liblzma)
     - pkgconfig(libnghttp2)
     - pkgconfig(libzstd)
     - pkgconfig(openssl)
-    # lzma for HTTP compression
+    - pkgconfig(zlib)
     # pandoc for manpages
 setup       : |
-    %configure --disable-static
+    %configure --disable-static --with-lzma
 build       : |
     %make
 install     : |
