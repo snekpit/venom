@@ -29,6 +29,7 @@ rundeps   :
     - systemd
     - util-linux
     - unzip
+    - wget
     - which
 install     : |
     # This is 100% temporary. Boulder does not yet support empty AKA virtual packages, so 
