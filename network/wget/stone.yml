@@ -15,10 +15,10 @@ description : |
 license     :
     - GPL-3.0-or-later
 builddeps   :
-    - pkgconfig(openssl)
     - pkgconfig(libbrotlidec)
+    - pkgconfig(libnghttp2)
     - pkgconfig(libzstd)
-    # libnghttp2 for HTTP/2 support
+    - pkgconfig(openssl)
     # lzma for HTTP compression
     # pandoc for manpages
 setup       : |
