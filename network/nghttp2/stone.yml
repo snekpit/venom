@@ -1,0 +1,23 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : nghttp2
+version     : 1.49.0
+release     : 1
+homepage    : https://nghttp2.org
+upstreams   :
+    - https://github.com/nghttp2/nghttp2/releases/download/v1.49.0/nghttp2-1.49.0.tar.xz : b0cfd492bbf0b131c472e8f6501c9f4ee82b51b68130f47b278c0b7c9848a66e
+summary     : C implementation of the HTTP/2.0 protocol
+description : |
+   nghttp2 is an implementation of the Hypertext Transfer Protocol version 2 in C.
+
+    The framing layer of HTTP/2 is implemented as a reusable C library. On top of that, we have implemented an HTTP/2 client, server and proxy. We have also developed load test and benchmarking tools for HTTP/2.
+license     : MIT
+setup       : |
+    %configure --disable-static
+build       : |
+    %make
+install     : |
+    %make_install
