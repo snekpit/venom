@@ -1,0 +1,27 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.1",
+	"packages": {
+		"lua": {
+			"files": [
+				"/usr/bin/lua",
+				"/usr/bin/luac",
+				"/usr/share/man/lua.1",
+				"/usr/share/man/luac.1"
+			]
+		},
+		"lua-devel": {
+			"files": [
+				"/usr/include/lauxlib.h",
+				"/usr/include/lua.h",
+				"/usr/include/lua.hpp",
+				"/usr/include/luaconf.h",
+				"/usr/include/lualib.h",
+				"/usr/lib/liblua.a"
+			]
+		}
+	},
+	"source-name": "lua",
+	"source-release": "1",
+	"source-version": "5.4.4"
+}
