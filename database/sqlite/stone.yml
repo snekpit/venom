@@ -1,0 +1,21 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : sqlite
+version     : 3.39.3
+release     : 1
+homepage    : https://www.sqlite.org
+upstreams   :
+    - https://www.sqlite.org/2022/sqlite-autoconf-3390300.tar.gz : 7868fb3082be3f2cf4491c6fba6de2bddcbc293a35fefb0624ee3c13f01422b9
+summary     : Small, self-contained SQL database engine
+description : |
+    SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. SQLite is the most used database engine in the world. SQLite is built into all mobile phones and most computers and comes bundled inside countless other applications that people use every day.
+license     : Public Domain
+setup       : |
+    %configure --disable-static
+build       : |
+    %make
+install     : |
+    %make_install
