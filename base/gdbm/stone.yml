@@ -25,6 +25,4 @@ install     : |
     %make_install
     rm -v %(installroot)/%(libdir)/*.la
 check       : |
-    # This can be removed when boulder sets the HOME environmental variable in the build environment
-    export HOME="this doesn't actually need to be a valid home but some tests fail if it's not set"
     %make check
