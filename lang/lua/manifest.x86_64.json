@@ -6,6 +6,8 @@
 			"files": [
 				"/usr/bin/lua",
 				"/usr/bin/luac",
+				"/usr/lib/liblua.so.1",
+				"/usr/lib/liblua.so.1.4",
 				"/usr/share/man/lua.1",
 				"/usr/share/man/luac.1"
 			]
@@ -17,7 +19,7 @@
 				"/usr/include/lua.hpp",
 				"/usr/include/luaconf.h",
 				"/usr/include/lualib.h",
-				"/usr/lib/liblua.a"
+				"/usr/lib/liblua.so"
 			]
 		}
 	},
