@@ -4,6 +4,7 @@
 	"packages": {
 		"wget": {
 			"files": [
+				"/usr/bin/wget",
 				"/usr/bin/wget2",
 				"/usr/bin/wget2_noinstall",
 				"/usr/lib/libwget.la",
