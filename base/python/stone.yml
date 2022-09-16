@@ -39,6 +39,8 @@ build       : |
 install     : |
     # Bolt section removed until the reason why it segfaults the install is found
     %make_install
+
+    ln -s %(bindir)/python3 %(installroot)/%(bindir)/python
 tuning      :
     - bolt
     - icf: all
