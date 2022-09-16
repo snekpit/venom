@@ -33,7 +33,5 @@ packages    :
         summary: "Nettle binaries"
         description: |
             Nettle binaries
-        # rundeps:
-        #     - python
         paths:
             - /usr/bin/*
