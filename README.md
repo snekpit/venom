@@ -82,7 +82,7 @@ Example: `shells/fish: Add vX.Y` or `shells/fish: Update to vX.Y` or `shells/fis
 
 Bump release for functional recipe changes only; do not bump release for no functional change commits (documentation typos, formatting).
 
-No functional change commits use the [NFC] verb: `shells/fish: [NFC] Tweak comments`.
+No functional change commits use the [NFC] tag: `shells/fish: [NFC] Tweak comments`.
 
 ### Recipe licensing
 
