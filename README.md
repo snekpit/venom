@@ -78,7 +78,7 @@ To get a basic recipe, use `boulder new -h` to get started. And no, boulder does
 
 Use a `category/pkg: verb <foo>` format with one commit per package change.
 
-Example `shells/fish: Add vX.Y` or `shells/fish: Update to vX.Y` or `shells/fish: Fix (...)`
+Example: `shells/fish: Add vX.Y` or `shells/fish: Update to vX.Y` or `shells/fish: Fix (...)`
 
 Bump release for functional recipe changes only; do not bump release for no functional change commits (documentation typos, formatting).
 
