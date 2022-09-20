@@ -18,12 +18,26 @@ builddeps   :
     - binary(bzip2)
     - pkgconfig(libarchive)
     - pkgconfig(libcurl)
+    - pkgconfig(libmicrohttpd)
     - pkgconfig(sqlite3)
     - pkgconfig(zlib)
-    # TODO: libmicrohttpd (can also be used for the wget test suite)
 setup       : |
-    %configure
+    %configure --disable-static
 build       : |
     %make
 install     : |
     %make_install
+    find %(installroot)/%(libdir) -type f -name '*.a' -delete
+#check       : |
+#    %make check
+packages    :
+    - libelf:
+        paths:
+            # Replace with %(libdir) once https://github.com/serpent-os/moss-format/issues/2 is solved.
+            - /usr/lib/libelf.so.*
+    - libelf-devel:
+        paths:
+            # Replace with %(includedir).
+            - /usr/include/libelf*
+            - /usr/lib/libelf*.so
+            - /usr/lib/pkgconfig/libelf*
