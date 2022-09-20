@@ -1,0 +1,50 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : python
+version     : 3.10.7
+release     : 2
+summary     : Python language interpreter
+license     : Python-2.0
+homepage    : https://www.python.org
+description : |
+    Python language interpreter
+upstreams   :
+    - https://www.python.org/ftp/python/3.10.7/Python-3.10.7.tar.xz: 6eed8415b7516fb2f260906db5d48dd4c06acc0cb24a7d6cc15296a604dcdc48
+builddeps   :
+    - make
+    - libcxx-devel
+    - libxcrypt-devel
+    - libffi-devel
+    - xz-devel
+    - util-linux-devel
+    - llvm-bolt
+    - pkgconfig(ncursesw)
+    - pkgconfig(openssl)
+    - pkgconfig(zlib)
+setup       : |
+    %patch %(pkgdir)/serpent/always-install-setuptools.patch
+
+    %configure --disable-ipv6 \
+        --enable-lto \
+        --enable-optimizations \
+        --enable-shared \
+        --with-computed-gotos \
+        --without-cxx-main \
+        ax_cv_c_float_words_bigendian=no
+build       : |
+    %make
+install     : |
+    # Bolt section removed until the reason why it segfaults the install is found
+    %make_install
+
+    ln -s %(bindir)/python3 %(installroot)/%(bindir)/python
+tuning      :
+    - bolt
+    - icf: all
+    - lto
+    - nosemantic
+    - optimize: speed
+    - symbolic

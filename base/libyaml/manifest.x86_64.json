@@ -1,0 +1,22 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.1",
+	"packages": {
+		"libyaml": {
+			"files": [
+				"/usr/lib/libyaml-0.so.2",
+				"/usr/lib/libyaml-0.so.2.0.9"
+			]
+		},
+		"libyaml-devel": {
+			"files": [
+				"/usr/include/yaml.h",
+				"/usr/lib/libyaml.so",
+				"/usr/lib/pkgconfig/yaml-0.1.pc"
+			]
+		}
+	},
+	"source-name": "libyaml",
+	"source-release": "1",
+	"source-version": "0.2.5"
+}

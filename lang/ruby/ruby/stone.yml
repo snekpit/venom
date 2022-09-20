@@ -1,0 +1,41 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : ruby
+version     : 3.1.2
+release     : 1
+summary     : An object-oriented language for quick and easy programming
+license     : Ruby
+homepage    : https://www.ruby-lang.org/en/
+description : |
+    An object-oriented language for quick and easy programming
+upstreams   :
+    - https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz: 61843112389f02b735428b53bb64cf988ad9fb81858b8248e22e57336f24a83e
+builddeps   :
+    - gdbm-devel
+    - make
+    - pkgconfig(gmp)
+    - pkgconfig(libcrypt)
+    - pkgconfig(libffi)
+    - pkgconfig(libssl)
+    - pkgconfig(readline)
+    - pkgconfig(yaml-0.1)
+    - pkgconfig(zlib)
+setup       : |
+    export LDFLAGS="$(echo ${LDFLAGS} | sed --expression='s/-Wl,--icf=safe //')"
+    %configure --disable-rpath \
+               --enable-shared \
+               --with-dbm-type=gdbm_compat \
+               --with-sitedir=%(libdir)/ruby/site_ruby \
+               --disable-install-doc
+    ## TODO: Figure out why docs won't build (the --disable-install-doc flag above)
+build       : |
+    %make
+install     : |
+    %make_install
+# TODO test suite (needs networking)
+# check       : |
+#     %make check
+# TODO maybe pattern this out a bit

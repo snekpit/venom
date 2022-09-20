@@ -1,0 +1,26 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.1",
+	"packages": {
+		"libmicrohttpd": {
+			"files": [
+				"/usr/lib/libmicrohttpd.so.12",
+				"/usr/lib/libmicrohttpd.so.12.60.0",
+				"/usr/share/info/libmicrohttpd-tutorial.info",
+				"/usr/share/info/libmicrohttpd.info",
+				"/usr/share/info/libmicrohttpd_performance_data.png",
+				"/usr/share/man/man3/libmicrohttpd.3"
+			]
+		},
+		"libmicrohttpd-devel": {
+			"files": [
+				"/usr/include/microhttpd.h",
+				"/usr/lib/libmicrohttpd.so",
+				"/usr/lib/pkgconfig/libmicrohttpd.pc"
+			]
+		}
+	},
+	"source-name": "libmicrohttpd",
+	"source-release": "1",
+	"source-version": "0.9.75"
+}

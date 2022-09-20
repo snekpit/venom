@@ -14,9 +14,35 @@ The goal is also to eventually have all recipes work, at which point we can migr
 
 ### Recipe tree structure
 
-The goal is to be inspired by the [FreeBSD](https://www.freebsd.org/ports/) [ports tree](https://cgit.freebsd.org/ports) and [SolusOS2](https://github.com/SolusOS-discontinued/packages) and see where that gets us.
+The goal is to be inspired by the [SolusOS2](https://github.com/SolusOS-discontinued/packages) organisation and the [Exherbo git monorepo trees](https://git.exherbo.org/) for inspiration and see where that gets us.
 
-We're going to aim for consensus decisions to begin with, so everyone is expected to keep things civil.
+Note that `base/` is reserved for critical, self-hosting systemd-nspawn container stuff that must always be in working order. A good example would be `readline`, because shells and compilers included in the self-hosting systemd-nspawn containers set rely on it.
+
+We're going to aim for consensus decisions to begin with, so everyone is expected to keep things civil. That said, if the BDFL chips in, his decisions take precedence.
+
+EDIT: Log of discussion in serpentos-devel on matrix:
+
+```
+livingsilver94
+tbh I think think categorization is strictly personal subject.
+The only tech reason is the limit in GH visualization and performance of directory walking.
+we have a dictator for a reason :3
+Ikey Doherty
+yeah, I want to limit depth for that reason
+finding the ymls + bins will take too long
+good point
+ideally 1 dir, max 2.
+there.
+if i dont like where something is ill just move it
+and we'll organise as we go
+sound good?
+livingsilver94
+perf. So now libmicrohttpd goes in net-libs and fuck everything till you decide differently
+Ikey Doherty
+grand
+otherwise we'll be hung up for days deciding semantics
+when its just a git mv away
+```
 
 ### Package wishlist
 
@@ -47,6 +73,16 @@ To get a basic recipe, use `boulder new -h` to get started. And no, boulder does
 - manifest.bin : Binary moss readable file used to create moss collection stone.index files for dep resolution etc.
 - manifest.json: Human readable version of manifest.bin used for git diff introspection purposes
 - stone.yml    : The actual build recipe
+
+### Commit messages
+
+Use a `category/pkg: verb <foo>` format with one commit per package change.
+
+Example: `shells/fish: Add vX.Y` or `shells/fish: Update to vX.Y` or `shells/fish: Fix (...)`
+
+Bump release for functional recipe changes only; do not bump release for no functional change commits (documentation typos, formatting).
+
+No functional change commits use the [NFC] tag: `shells/fish: [NFC] Tweak comments`.
 
 ### Recipe licensing
 

@@ -1,0 +1,26 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : openssl
+version     : 3.0.5
+release     : 2
+summary     : OpenSSL cryptography library
+license     : Apache-2.0
+homepage    : https://www.openssl.org
+description : |
+    OpenSSL cryptography library.
+upstreams   :
+    - https://www.openssl.org/source/openssl-3.0.5.tar.gz: aa7d8d9bef71ad6525c55ba11e5f4397889ce49c2c9349dcea6d3e4f0b024a7a
+builddeps   :
+    - make
+    - perl
+setup       : |
+    ./Configure --prefix=/usr \
+        --libdir=/usr/lib
+build       : |
+    %make
+install     : |
+    %make_install
+    rm %(installroot)/%(libdir)/*.a

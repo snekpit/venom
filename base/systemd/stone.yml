@@ -1,0 +1,65 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : systemd
+version     : '250.8'
+release     : 2
+summary     : A System and Service Manager
+license     :
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+    - MIT
+homepage    : http://www.freedesktop.org/wiki/Software/systemd
+description : |
+    A System and Service Manager
+upstreams   :
+    - https://github.com/systemd/systemd-stable/archive/v250.8.tar.gz: 638a2fc78828765fc97bc73f428205b6dc1d359149b6c6bfe4d2a649cba2cca8
+builddeps   :
+    - meson
+    - ninja
+    - acl-devel
+    - dbus-devel
+    - gettext-devel
+    - gperf
+    - libffi-devel
+    - zlib-devel
+    - zstd-devel
+    - util-linux-devel
+    - libcap-devel
+    - libxcrypt-devel
+    - openssl-devel
+    - curl-devel
+    - xz-devel
+    - linux-pam-devel
+    - zstd-devel
+    - binary(m4)
+    - binutils
+    - python-jinja
+    - pkgconfig(libpcre2-8)
+setup       : |
+    %meson \
+        -Dbpf-framework=false \
+        -Defi=true \
+        -Dfuzz-tests=false \
+        -Dinstall-tests=false \
+        -Dmode=release \
+        -Dslow-tests=false \
+        -Dsplit-bin=true \
+        -Dsplit-usr=false \
+        -Dtests=false \
+        -Dzstd=true
+build       : |
+    %meson_build
+install     : |
+    %meson_install
+
+    # Stateless: Clean up /var directories, they are created via tmpfiles already
+    rmdir %(installroot)/var/lib/systemd %(installroot)/var/lib
+    rmdir %(installroot)/var/log/journal %(installroot)/var/log %(installroot)/var
+
+    # Stateless: Clean up /etc, contains mostly example configs to learn from that we should put somewhere
+    # Actual vendor files can go in /usr/lib/systemd/journald.conf.d for example
+    # Test via systemd-analyze cat-config systemd/journald.conf
+    rm -rf %(installroot)/etc

@@ -1,0 +1,43 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : elfutils
+version     : 0.148
+release     : 1
+homepage    : https://sourceware.org/elfutils
+upstreams   :
+    - https://sourceware.org/elfutils/ftp/0.187/elfutils-0.187.tar.bz2 : e70b0dfbe610f90c4d1fe0d71af142a4e25c3c4ef9ebab8d2d72b65159d454c8
+summary     : Collection of utilities and libraries to read, create and modify ELF binary files
+description : |
+    elfutils is a collection of utilities and libraries to read, create and modify ELF binary files, find and handle DWARF debug data, symbols, thread state and stacktraces for processes and core files on GNU/Linux.
+license     :
+    - GPL-2.0-or-later
+builddeps   :
+    - binary(bzip2)
+    - pkgconfig(libarchive)
+    - pkgconfig(libcurl)
+    - pkgconfig(libmicrohttpd)
+    - pkgconfig(sqlite3)
+    - pkgconfig(zlib)
+setup       : |
+    %configure --disable-static
+build       : |
+    %make
+install     : |
+    %make_install
+    find %(installroot)/%(libdir) -type f -name '*.a' -delete
+#check       : |
+#    %make check
+packages    :
+    - libelf:
+        paths:
+            # Replace with %(libdir) once https://github.com/serpent-os/moss-format/issues/2 is solved.
+            - /usr/lib/libelf.so.*
+    - libelf-devel:
+        paths:
+            # Replace with %(includedir).
+            - /usr/include/libelf*
+            - /usr/lib/libelf*.so
+            - /usr/lib/pkgconfig/libelf*

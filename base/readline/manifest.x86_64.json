@@ -19,12 +19,6 @@
 				"/usr/share/man/man3/readline.3"
 			]
 		},
-		"readline-dbginfo": {
-			"files": [
-				"/usr/lib/debug/.build-id/3f/b3411b07487104.debug",
-				"/usr/lib/debug/.build-id/42/445b0107809afc.debug"
-			]
-		},
 		"readline-devel": {
 			"files": [
 				"/usr/include/readline/chardefs.h",
@@ -37,6 +31,7 @@
 				"/usr/include/readline/tilde.h",
 				"/usr/lib/libhistory.so",
 				"/usr/lib/libreadline.so",
+				"/usr/lib/pkgconfig/history.pc",
 				"/usr/lib/pkgconfig/readline.pc"
 			]
 		}
