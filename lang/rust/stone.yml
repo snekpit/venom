@@ -1,0 +1,29 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : rustc
+version     : 1.63.0
+release     : 1
+homepage    : https://www.rust-lang.org
+upstreams   :
+    - https://static.rust-lang.org/dist/rustc-1.63.0-src.tar.xz : 8f44af6dc44cc4146634a4dd5e4cc5470b3052a2337019b870c0e025e8987e0c
+summary     : Modern, secure and fast system programming language
+description : |
+    Rust is a modern, secure and fast system programming language that addresses pitfalls or older language like C while retaining a focus on performance and low-level access via zero-cost abstractions.
+license     :
+    - Apache-2.0 OR MIT
+networking  : yes
+builddeps   :
+    - binary(python3)
+    - nss
+setup       : |
+    sed -e 's|AR|$AR|g' \
+        -e 's|BINDIR|%(bindir)|g' \
+        -e 's|PREFIX|%(prefix)|g' \
+        -e 's|LIBDIR|%(libdir)|g' %(pkgdir)/config.toml.in > config.toml
+build       : |
+    python3 x.py build --stage 2
+install     : |
+    python3 x.py install --stage 2

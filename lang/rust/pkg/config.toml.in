@@ -1,0 +1,31 @@
+changelog-seen = 2
+
+[build]
+#cargo = "BINDIR/cargo"
+docs = false
+extended = true
+# Mainly needed for cross-language PGO.
+profiler = true
+# aarch64 will come later.
+target = ["i686-unknown-linux-gnu", "x86_64-unknown-linux-gnu"]
+tools = ["cargo", "clippy", "rustfmt"]
+vendor = true
+
+[install]
+libdir = "LIBDIR"
+prefix = "PREFIX"
+
+[llvm]
+link-shared = true
+targets = "X86"
+
+[rust]
+channel = "stable"
+description = "SerpentOS"
+rpath = false
+
+[target.i686-unknown-linux-gnu]
+ar = "AR"
+
+[target.x86_64-unknown-linux-gnu]
+ar = "AR"
