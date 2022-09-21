@@ -14,7 +14,7 @@ The goal is also to eventually have all recipes work, at which point we can migr
 
 ### Recipe tree structure
 
-The goal is to be inspired by the [SolusOS2](https://github.com/SolusOS-discontinued/packages) organisation and the [Exherbo git monorepo trees](https://git.exherbo.org/) for inspiration and see where that gets us.
+The goal is to be inspired by the [SolusOS2](https://github.com/SolusOS-discontinued/packages) organisation and the [Exherbo git monorepo trees](https://git.exherbo.org/) and see where that gets us.
 
 Note that `base/` is reserved for critical, self-hosting systemd-nspawn container stuff that must always be in working order. A good example would be `readline`, because shells and compilers included in the self-hosting systemd-nspawn containers set rely on it.
 
@@ -68,10 +68,10 @@ To get a basic recipe, use `boulder new -h` to get started. And no, boulder does
 
 ### What to commit
 
-    git add stone.yml manifest.bin manifest.json
+    git add stone.yml manifest.bin manifest.jsonc
 
 - manifest.bin : Binary moss readable file used to create moss collection stone.index files for dep resolution etc.
-- manifest.json: Human readable version of manifest.bin used for git diff introspection purposes
+- manifest.jsonc: Human readable version of manifest.bin used for git diff introspection purposes
 - stone.yml    : The actual build recipe
 
 ### Commit messages
