@@ -14,14 +14,6 @@
 				"/usr/lib/libpcre2-posix.so.3.0.2"
 			]
 		},
-		"pcre2-dbginfo": {
-			"files": [
-				"/usr/lib/debug/.build-id/48/41a0c47addb0c7.debug",
-				"/usr/lib/debug/.build-id/b1/1f3342edbe4433.debug",
-				"/usr/lib/debug/.build-id/e7/2a7a0579851ef5.debug",
-				"/usr/lib/debug/.build-id/fd/72ad704918cc61.debug"
-			]
-		},
 		"pcre2-devel": {
 			"files": [
 				"/usr/bin/pcre2-config",
