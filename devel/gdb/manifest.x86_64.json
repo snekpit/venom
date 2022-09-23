@@ -1,0 +1,57 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.1",
+	"packages": {
+		"gdb": {
+			"files": [
+				"/usr/bin/gcore",
+				"/usr/bin/gdb",
+				"/usr/bin/gdb-add-index",
+				"/usr/bin/gdbserver",
+				"/usr/share/gdb/syscalls/aarch64-linux.xml",
+				"/usr/share/gdb/syscalls/amd64-linux.xml",
+				"/usr/share/gdb/syscalls/arm-linux.xml",
+				"/usr/share/gdb/syscalls/freebsd.xml",
+				"/usr/share/gdb/syscalls/gdb-syscalls.dtd",
+				"/usr/share/gdb/syscalls/i386-linux.xml",
+				"/usr/share/gdb/syscalls/mips-n32-linux.xml",
+				"/usr/share/gdb/syscalls/mips-n64-linux.xml",
+				"/usr/share/gdb/syscalls/mips-o32-linux.xml",
+				"/usr/share/gdb/syscalls/netbsd.xml",
+				"/usr/share/gdb/syscalls/ppc-linux.xml",
+				"/usr/share/gdb/syscalls/ppc64-linux.xml",
+				"/usr/share/gdb/syscalls/s390-linux.xml",
+				"/usr/share/gdb/syscalls/s390x-linux.xml",
+				"/usr/share/gdb/syscalls/sparc-linux.xml",
+				"/usr/share/gdb/syscalls/sparc64-linux.xml",
+				"/usr/share/gdb/system-gdbinit/elinos.py",
+				"/usr/share/gdb/system-gdbinit/wrs-linux.py",
+				"/usr/share/info/annotate.info",
+				"/usr/share/info/gdb.info",
+				"/usr/share/info/gdb.info-1",
+				"/usr/share/info/gdb.info-2",
+				"/usr/share/info/gdb.info-3",
+				"/usr/share/info/gdb.info-4",
+				"/usr/share/info/gdb.info-5",
+				"/usr/share/info/gdb.info-6",
+				"/usr/share/info/gdb.info-7",
+				"/usr/share/info/gdb.info-8",
+				"/usr/share/info/stabs.info",
+				"/usr/share/man/man1/gcore.1",
+				"/usr/share/man/man1/gdb-add-index.1",
+				"/usr/share/man/man1/gdb.1",
+				"/usr/share/man/man1/gdbserver.1",
+				"/usr/share/man/man5/gdbinit.5"
+			]
+		},
+		"gdb-devel": {
+			"files": [
+				"/usr/include/gdb/jit-reader.h",
+				"/usr/lib/libinproctrace.so"
+			]
+		}
+	},
+	"source-name": "gdb",
+	"source-release": "1",
+	"source-version": "12.1"
+}
