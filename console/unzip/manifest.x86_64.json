@@ -15,13 +15,6 @@
 				"/usr/share/man/man1/zipgrep.1",
 				"/usr/share/man/man1/zipinfo.1"
 			]
-		},
-		"unzip-dbginfo": {
-			"files": [
-				"/usr/lib/debug/.build-id/53/35da9c3ed94c356f92519c6f1a452c4f985123.debug",
-				"/usr/lib/debug/.build-id/73/6f4a4d4ee075aceb81621b9e3915c28a32fb97.debug",
-				"/usr/lib/debug/.build-id/db/834ab50cc75f4dbdba79de67693d709c71c38d.debug"
-			]
 		}
 	},
 	"source-name": "unzip",
