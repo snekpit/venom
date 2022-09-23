@@ -20,8 +20,10 @@ rundeps   :
     - grep
     - gzip
     - less
+    - linux-pam
     - nano
     - nss
+    - openssh
     - procps-ng
     - python
     - sed
@@ -29,6 +31,7 @@ rundeps   :
     - systemd
     - util-linux
     - unzip
+    - vim
     - wget
     - which
 install     : |
