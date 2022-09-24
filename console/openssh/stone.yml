@@ -22,10 +22,12 @@ builddeps   :
     - pkgconfig(libcrypto)
     - pkgconfig(libedit)
     - pkgconfig(libldns)
+    - pkgconfig(libsystemd)
     - pkgconfig(pam)
     - pkgconfig(zlib)
 # TODO Kerberos support (krb5)
 setup       : |
+    %patch %(pkgdir)/openssh-7.4p1-systemd.patch
     %patch %(pkgdir)/stateless/0001-Make-SSH-stateless.patch
     %patch %(pkgdir)/stateless/0002-Stateless-moduli.patch
     %patch %(pkgdir)/security/0003-Increase-ECDSA-default-length-to-521.patch
@@ -33,22 +35,24 @@ setup       : |
     %patch %(pkgdir)/stateless/0005-Always-use-PAM-by-default.patch
     %patch %(pkgdir)/stateless/0006-Set-default-server-keep-alive.patch
     %patch %(pkgdir)/stateless/0007-Make-OpenSSH-print-a-MOTD-file-in-usr-share-defaults.patch
+    %patch %(pkgdir)/stateless/0008-Update-sshd_config-to-reflect-UsePAM-yes-default.patch
     %patch %(pkgdir)/stateless/statelessconfig.patch
 
     # --disable-strip is specified because we want the build toolchain to do it instead
-    %configure --sysconfdir=/etc/ssh \
-               --with-pid-dir=/run \
-               --with-ldns \
-               --with-libedit \
-               --with-pam \
-               --with-ssl-engine \
-               --disable-lastlog \
-               --disable-strip
+    %reconfigure --sysconfdir=/etc/ssh \
+                 --with-pid-dir=/run \
+                 --with-ldns \
+                 --with-libedit \
+                 --with-pam \
+                 --with-ssl-engine \
+                 --with-systemd \
+                 --disable-lastlog \
+                 --disable-strip
 build       : |
     %make
 install     : |
     %make_install
-    
+
     # systemd unit files (enabled by default)
     %install_file %(pkgdir)/sshd*.service -t %(installroot)/%(libdir)/systemd/system/
 
