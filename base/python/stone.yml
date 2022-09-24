@@ -41,6 +41,13 @@ install     : |
     %make_install
 
     ln -s %(bindir)/python3 %(installroot)/%(bindir)/python
+packages    :
+    # This should be "%(name)-devel". See https://github.com/serpent-os/moss-format/issues/2
+    - python-devel:
+        rundeps:
+            # python3 /usr/lib/python*/config-*-x86_64-linux-gnu/python-config.py --ldflags
+            # returns "-lcrypt" among the other things. Make sure it's available.
+            - libxcrypt-devel
 tuning      :
     - bolt
     - icf: all
