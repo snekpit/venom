@@ -14,6 +14,7 @@ description : |
    A low-level cryptographic library
 license     : LGPL-3.0-or-later
 builddeps   :
+    - binary(m4)
     - pkgconfig(gmp)
 # TODO: enable checks after packaging valgrind
 # checkdeps   :
