@@ -1,3 +1,8 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
 name        : linux-pam
 version     : 1.5.2
 release     : 2
@@ -11,7 +16,6 @@ description : |
 upstreams   :
     - https://github.com/linux-pam/linux-pam/releases/download/v1.5.2/Linux-PAM-1.5.2.tar.xz: e4ec7131a91da44512574268f493c6d8ca105c87091691b8e9b56ca685d4f94d
 builddeps   :
-    - binary(autopoint)
     - libcxx-devel
     - pkgconfig(libxcrypt)
 setup       : |
