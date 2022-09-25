@@ -1,0 +1,45 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : opendoas
+version     : 6.8.2
+release     : 1
+summary     : A portable fork of the OpenBSD doas command 
+license     :
+    - BSD-2-Clause
+homepage    : https://github.com/Duncaen/OpenDoas
+description : |
+    A portable fork of the OpenBSD doas command. This provides the functionality usually provided by sudo
+upstreams   :
+    - https://github.com/Duncaen/OpenDoas/releases/download/v6.8.2/opendoas-6.8.2.tar.xz: 4e98828056d6266bd8f2c93e6ecf12a63a71dbfd70a5ea99ccd4ab6d0745adf0
+builddeps   :
+    - binary(yacc)
+    - pkgconfig(pam)
+setup       : |
+    %patch %(pkgdir)/0001-Don-t-die-on-unknown-configure-options.patch
+    %patch %(pkgdir)/0001-Add-bash-completion-support.patch
+    %patch %(pkgdir)/stateless/0001-Stateless-config-file.patch
+
+    %configure --with-timestamp
+build       : |
+    %make
+install     : |
+    # make_install tries to run chown root:root /mason/build/install/usr/bin/doas which fails as the build env doesn't have a passwd or group file
+    %make_install BINOWN=0 BINGRP=0
+
+    # Configuration
+    %install_file %(pkgdir)/doas.conf %(installroot)/%(vendordir)/doas.conf
+
+    # Compat symlink
+    ln -s %(bindir)/doas %(installroot)/%(bindir)/sudo
+
+    # Since we ship doas as sudo we should have bash completions for sudo as well
+    cp %(installroot)/%(datadir)/bash-completion/completions/doas %(installroot)/%(datadir)/bash-completion/completions/sudo
+    sed -i 's|doas|sudo|g' %(installroot)/%(datadir)/bash-completion/completions/sudo
+
+    # Statelessness
+    %install_dir %(installroot)/%(vendordir)/
+    mv %(installroot)/etc/pam.d %(installroot)/%(vendordir)/
+    rmdir %(installroot)/etc

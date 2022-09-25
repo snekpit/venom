@@ -1,0 +1,21 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.1",
+	"packages": {
+		"opendoas": {
+			"files": [
+				"/usr/bin/doas",
+				"/usr/bin/sudo",
+				"/usr/share/bash-completion/completions/doas",
+				"/usr/share/bash-completion/completions/sudo",
+				"/usr/share/defaults/etc/doas.conf",
+				"/usr/share/defaults/etc/pam.d/doas",
+				"/usr/share/man/man1/doas.1",
+				"/usr/share/man/man5/doas.conf.5"
+			]
+		}
+	},
+	"source-name": "opendoas",
+	"source-release": "1",
+	"source-version": "6.8.2"
+}

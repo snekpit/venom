@@ -1,0 +1,40 @@
+From 10dfe0d8c424b7e6fe48fa169a2f9d02ece5b454 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Sun, 25 Sep 2022 00:02:47 -0500
+Subject: [PATCH 1/1] Stateless config file
+
+---
+ configure | 1 +
+ doas.c    | 5 ++++-
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/configure b/configure
+index 5c9f91e..a7680f9 100755
+--- a/configure
++++ b/configure
+@@ -568,5 +568,6 @@ else
+ fi
+ 
+ printf '#define DOAS_CONF "%s/doas.conf"\n' "${SYSCONFDIR}" >>$CONFIG_H
++printf '#define STATELESS_DOAS_CONF "%s/defaults/etc/doas.conf"\n' "${SHAREDIR}" >>$CONFIG_H
+ 
+ printf '\n#endif /* CONFIG_H */\n' >>$CONFIG_H
+diff --git a/doas.c b/doas.c
+index 0ea380a..911d9ac 100644
+--- a/doas.c
++++ b/doas.c
+@@ -335,7 +335,10 @@ main(int argc, char **argv)
+ 	if (geteuid())
+ 		errx(1, "not installed setuid");
+ 
+-	parseconfig(DOAS_CONF, 1);
++	if (access(DOAS_CONF, F_OK) == 0)
++		parseconfig(DOAS_CONF, 1);
++	else
++		parseconfig(STATELESS_DOAS_CONF, 1);
+ 
+ 	/* cmdline is used only for logging, no need to abort on truncate */
+ 	(void)strlcpy(cmdline, argv[0], sizeof(cmdline));
+-- 
+2.35.4
+

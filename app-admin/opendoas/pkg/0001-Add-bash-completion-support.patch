@@ -1,0 +1,115 @@
+From 881bf16bc83debcb268ca387bb9e191aa9389f84 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Sat, 24 Sep 2022 23:44:07 -0500
+Subject: [PATCH 1/1] Add bash-completion support
+
+---
+ GNUmakefile     | 10 +++++++---
+ configure       |  4 ++++
+ doas.completion | 19 +++++++++++++++++++
+ 3 files changed, 30 insertions(+), 3 deletions(-)
+ create mode 100644 doas.completion
+
+diff --git a/GNUmakefile b/GNUmakefile
+index 9470202..9cd41b7 100644
+--- a/GNUmakefile
++++ b/GNUmakefile
+@@ -1,7 +1,8 @@
+-PROG=	doas
+-MAN=	doas.1 doas.conf.5
++PROG=		doas
++MAN=		doas.1 doas.conf.5
++COMPLETION=	doas.completion
+ 
+-SRCS=	parse.y doas.c env.c
++SRCS=		parse.y doas.c env.c
+ 
+ include config.mk
+ 
+@@ -20,6 +21,7 @@ install: ${PROG} ${PAM_DOAS} ${MAN}
+ 	[ -n "${PAM_DOAS}" ] && mkdir -p -m 0755 ${DESTDIR}${PAMDIR} || true
+ 	mkdir -p -m 0755 ${DESTDIR}${MANDIR}/man1
+ 	mkdir -p -m 0755 ${DESTDIR}${MANDIR}/man5
++	mkdir -p -m 0755 ${DESTDIR}${COMPDIR}/completions
+ 	cp -f ${PROG} ${DESTDIR}${BINDIR}
+ 	chown ${BINOWN}:${BINGRP} ${DESTDIR}${BINDIR}/${PROG}
+ 	chmod ${BINMODE} ${DESTDIR}${BINDIR}/${PROG}
+@@ -27,12 +29,14 @@ install: ${PROG} ${PAM_DOAS} ${MAN}
+ 	[ -n "${PAM_DOAS}" ] && chmod 0644 ${DESTDIR}${PAMDIR}/doas || true
+ 	cp -f doas.1 ${DESTDIR}${MANDIR}/man1
+ 	cp -f doas.conf.5 ${DESTDIR}${MANDIR}/man5
++	cp -f doas.completion ${DESTDIR}${COMPDIR}/completions/doas
+ 
+ uninstall:
+ 	rm -f ${DESTDIR}${BINDIR}/${PROG}
+ 	rm -f ${DESTDIR}${PAMDIR}/doas
+ 	rm -f ${DESTDIR}${MANDIR}/man1/doas.1
+ 	rm -f ${DESTDIR}${MANDIR}/man5/doas.conf.5
++	rm -f ${DESTDIR}${COMPDIR}/completions/doas
+ 
+ clean:
+ 	rm -f ${PROG} ${OBJS} ${OBJS:.o=.d} parse.c
+diff --git a/configure b/configure
+index 37d4d5c..5c9f91e 100755
+--- a/configure
++++ b/configure
+@@ -14,6 +14,7 @@ usage: configure [options]
+   --bindir=DIR           user executables [PREFIX/bin]
+   --datadir=DIR          architecture-independent data files [PREFIX/share]
+   --mandir=DIR           manual pages [DATADIR/man]
++  --compdir=DIR          bash completions [DATADIR/bash-completion]
+   --sysconfdir=DIR       directory for configuration files [/etc]
+   --pamdir=DIR           PAM directory [SYSCONFDIR/pam.d]
+ 
+@@ -51,6 +52,7 @@ for x; do
+ 	--bindir) BINDIR=$var ;;
+ 	--datadir) SHAREDIR=$var ;;
+ 	--mandir) MANDIR=$var ;;
++	--compdir) COMPDIR=$var ;;
+ 	--sysconfdir) SYSCONFDIR=$var ;;
+ 	--pamdir) PAMDIR=$var ;;
+ 	--build) BUILD=$var ;;
+@@ -133,6 +135,7 @@ esac
+ : ${BINDIR:=${PREFIX}/bin}
+ : ${SHAREDIR:=${PREFIX}/share}
+ : ${MANDIR:=${SHAREDIR}/man}
++: ${COMPDIR:=${SHAREDIR}/bash-completion}
+ : ${SYSCONFDIR:=/etc}
+ : ${PAMDIR:=${SYSCONFDIR}/pam.d}
+ : ${BINMODE:=4755}
+@@ -145,6 +148,7 @@ EPREFIX  ?=	${EPREFIX}
+ BINDIR   ?=	${BINDIR}
+ SHAREDIR ?=	${SHAREDIR}
+ MANDIR   ?=	${MANDIR}
++COMPDIR  ?=	${COMPDIR}
+ SYSCONFDIR?=	${SYSCONFDIR}
+ PAMDIR   ?=	${PAMDIR}
+ BINMODE  ?=	${BINMODE}
+diff --git a/doas.completion b/doas.completion
+new file mode 100644
+index 0000000..e11c3d6
+--- /dev/null
++++ b/doas.completion
+@@ -0,0 +1,19 @@
++# bash completion for doas(1)                              -*- shell-script -*-
++
++_doas() {
++	local cur prev words cword split
++	_init_completion -s || return
++
++	for ((i = 1; i <= cword; i++)); do
++		if [[ ${words[i]} != -* ]]; then
++			local PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
++			local root_command=${words[i]}
++			_command_offset $i
++			return
++		fi
++
++		[[ ${words[i]} == -@(u|C) ]] && ((i++))
++	done
++} && complete -F _doas doas
++
++# ex: filetype=sh
+-- 
+2.35.4
+

@@ -1,0 +1,25 @@
+From a125540220ed61ff54ee0ac94078d8df66d8a469 Mon Sep 17 00:00:00 2001
+From: Reilly Brogan <reilly@reillybrogan.com>
+Date: Sat, 24 Sep 2022 23:20:26 -0500
+Subject: [PATCH 1/1] Don't die on unknown configure options
+
+---
+ configure | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configure b/configure
+index 1c5d989..37d4d5c 100755
+--- a/configure
++++ b/configure
+@@ -67,7 +67,7 @@ for x; do
+ 	--uid-max) UID_MAX=$var ;;
+ 	--gid-max) UID_MAX=$var ;;
+ 	--help|-h) usage ;;
+-	*) die "Error: unknown option $opt" ;;
++	*) printf "Info: unknown option $opt\n" ;;
+ 	esac
+ done
+ 
+-- 
+2.35.4
+
