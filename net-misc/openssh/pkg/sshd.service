@@ -6,7 +6,7 @@ After=sshd-keygen.service network.target
 
 [Service]
 Type=notify
-ExecStart=/usr/sbin/sshd -D $OPTIONS
+ExecStart=/usr/sbin/sshd -D -e $OPTIONS
 ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
 Restart=on-failure

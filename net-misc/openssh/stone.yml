@@ -26,6 +26,7 @@ builddeps   :
     - pkgconfig(pam)
     - pkgconfig(zlib)
 # TODO Kerberos support (krb5)
+# TODO FIDO support (libfido)
 setup       : |
     %patch %(pkgdir)/openssh-7.4p1-systemd.patch
     %patch %(pkgdir)/stateless/0001-Make-SSH-stateless.patch
@@ -52,6 +53,8 @@ build       : |
     %make
 install     : |
     %make_install
+
+    # TODO ssh-copy-id
 
     # systemd unit files (enabled by default)
     %install_file %(pkgdir)/sshd*.service -t %(installroot)/%(libdir)/systemd/system/
