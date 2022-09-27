@@ -21,6 +21,7 @@ rundeps   :
     - grep
     - gzip
     - inetutils
+    - iproute2
     - less
     - linux-pam
     - nano
@@ -30,6 +31,7 @@ rundeps   :
     - openssh
     - procps-ng
     - python
+    - screen
     - sed
     - shadow
     - systemd
