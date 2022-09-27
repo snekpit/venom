@@ -6,9 +6,9 @@
 			"files": [
 				"/usr/bin",
 				"/usr/lib/libhistory.so.8",
-				"/usr/lib/libhistory.so.8.1",
+				"/usr/lib/libhistory.so.8.2",
 				"/usr/lib/libreadline.so.8",
-				"/usr/lib/libreadline.so.8.1",
+				"/usr/lib/libreadline.so.8.2",
 				"/usr/share/doc/readline/CHANGES",
 				"/usr/share/doc/readline/INSTALL",
 				"/usr/share/doc/readline/README",
@@ -38,5 +38,5 @@
 	},
 	"source-name": "readline",
 	"source-release": "1",
-	"source-version": "8.1.2"
+	"source-version": "8.2"
 }
