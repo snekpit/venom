@@ -1,0 +1,29 @@
+name        : bash
+version     : 5.2.0
+release     : 2
+summary     : GNU Bourne Again shell
+license     : GPL-3.0-or-later
+homepage    : http://www.gnu.org/software/bash/bash.html
+description : |
+    GNU Bourne Again shell
+upstreams   :
+    - https://ftp.gnu.org/gnu/bash/bash-5.2.tar.gz: a139c166df7ff4471c5e0733051642ee5556c1cc8a4a78f145583c5c81ab32fb
+builddeps   :
+    - libcxx-devel
+    - bison
+    - pkgconfig(readline)
+    - pkgconfig(ncursesw)
+setup       : |
+    %patch %(pkgdir)/stateless/0001-Use-a-stateless-profile-by-default.patch
+
+    %configure --without-bash-malloc \
+               --enable-nls \
+               --enable-readline \
+               --with-curses \
+               --with-installed-readline
+build       : |
+    %make -j3
+install     : |
+    %make_install -j3
+
+    %install_file %(pkgdir)/profile %(installroot)/%(vendordir)/profile
