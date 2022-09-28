@@ -1,0 +1,17 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.1",
+	"packages": {
+		"strace": {
+			"files": [
+				"/usr/bin/strace",
+				"/usr/bin/strace-log-merge",
+				"/usr/share/man/man1/strace-log-merge.1",
+				"/usr/share/man/man1/strace.1"
+			]
+		}
+	},
+	"source-name": "strace",
+	"source-release": "1",
+	"source-version": "5.19"
+}
