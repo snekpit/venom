@@ -1,0 +1,29 @@
+name        : tzdata
+version     : 2022d
+release     : 1
+summary     : Sources for time zone and daylight saving time data
+license     : Public-Domain
+homepage    : https://www.iana.org/time-zones
+description : |
+    Sources for time zone and daylight saving time data
+upstreams   :
+    - https://data.iana.org/time-zones/releases/tzdata2022d.tar.gz: 6ecdbee27fa43dcfa49f3d4fd8bb1dfef54c90da1abcd82c9abcf2dc4f321de0
+    - https://data.iana.org/time-zones/releases/tzcode2022d.tar.gz: d644ba0f938899374ea8cb554e35fb4afa0f7bd7b716c61777cd00500b8759e0
+builddeps   :
+    - make
+environment : |
+    export PATH=$PATH:/usr/sbin
+setup       : |
+    tar xf %(sourcedir)/tzcode*.tar.gz
+build       : |
+    make tzdata.zi
+install     : |
+    tz="africa antarctica asia australasia backward etcetera europe factory northamerica southamerica"
+
+    zic -y ./yearistype -d %(installroot)/usr/share/zoneinfo -L /dev/null $tz
+    zic -y ./yearistype -d %(installroot)/usr/share/zoneinfo/posix -L /dev/null $tz
+    zic -y ./yearistype -d %(installroot)/usr/share/zoneinfo/right -L leapseconds $tz
+    # Default DST
+    zic -y ./yearistype -d %(installroot)/usr/share/zoneinfo -L /dev/null -p America/New_York $tz
+
+    install -m00644 iso3166.tab zone.tab leapseconds tzdata.zi %(installroot)/usr/share/zoneinfo
