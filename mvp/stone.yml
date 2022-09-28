@@ -36,6 +36,7 @@ rundeps   :
     - shadow
     - systemd
     - tree
+    - tzdata
     - util-linux
     - unzip
     - vim
