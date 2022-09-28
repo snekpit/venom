@@ -31,13 +31,18 @@ install     : |
 #check       : |
 #    %make check
 packages    :
-    - libelf:
+# Use proper variables once https://github.com/serpent-os/moss-format/issues/2 is solved.
+#  - /usr/include is %(includedir)
+#  - /usr/lib is %(libdir)
+#  - /usr/share/man is %(mandir)
+#  - elfutils is %(name)
+    - elfutils-libs:
         paths:
-            # Replace with %(libdir) once https://github.com/serpent-os/moss-format/issues/2 is solved.
-            - /usr/lib/libelf.so.*
-    - libelf-devel:
+            - /usr/lib/lib*-*.so
+            - /usr/lib/lib*.so.*
+    - elfutils-libs-devel:
         paths:
-            # Replace with %(includedir).
-            - /usr/include/libelf*
-            - /usr/lib/libelf*.so
-            - /usr/lib/pkgconfig/libelf*
+            - /usr/include
+            - /usr/lib/lib*.so
+            - /usr/lib/pkgconfig
+            - /usr/share/man/man3
