@@ -19,12 +19,10 @@ builddeps   :
     - pkgconfig(libudev)
 setup       : |
     %patch %(pkgdir)/stateless/stateless.patch
-    # [LATER] Remove --sbindir when %meson will pass it automatically.
     %meson \
         -Dexamples=false \
         -Dinitscriptdir="" \
-        -Duseroot=false \
-        --sbindir=%(bindir)
+        -Duseroot=false
 build       : |
     %meson_build
 install     : |
