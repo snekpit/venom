@@ -1,0 +1,32 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.1",
+	"packages": {
+		"libfuse": {
+			"files": [
+				"/usr/bin/fusermount3",
+				"/usr/bin/mount.fuse3",
+				"/usr/lib/libfuse3.so.3",
+				"/usr/lib/libfuse3.so.3.12.0",
+				"/usr/lib/udev/rules.d/99-fuse3.rules",
+				"/usr/share/man/man1/fusermount3.1",
+				"/usr/share/man/man8/mount.fuse3.8"
+			]
+		},
+		"libfuse-devel": {
+			"files": [
+				"/usr/include/fuse3/cuse_lowlevel.h",
+				"/usr/include/fuse3/fuse.h",
+				"/usr/include/fuse3/fuse_common.h",
+				"/usr/include/fuse3/fuse_log.h",
+				"/usr/include/fuse3/fuse_lowlevel.h",
+				"/usr/include/fuse3/fuse_opt.h",
+				"/usr/lib/libfuse3.so",
+				"/usr/lib/pkgconfig/fuse3.pc"
+			]
+		}
+	},
+	"source-name": "libfuse",
+	"source-release": "1",
+	"source-version": "3.12.0"
+}
