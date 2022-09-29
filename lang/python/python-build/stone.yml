@@ -1,0 +1,24 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : python-build
+version     : 0.8.0
+release     : 1
+homepage    : https://github.com/pypa/build
+upstreams   :
+    - https://files.pythonhosted.org/packages/source/b/build/build-0.8.0.tar.gz : 887a6d471c901b1a6e6574ebaeeebb45e5269a79d095fe9a8f88d6614ed2e5f0
+summary     : Simple and correct PEP 517 build frontend
+description : |
+    python-build is a simple and correct PEP 517 build frontend.
+license     :
+    - MIT
+networking  : yes
+rundeps     :
+    - python-pep517
+    - python-tomli
+build       : |
+    %python
+install     : |
+    %python_install
