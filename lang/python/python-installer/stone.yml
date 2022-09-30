@@ -1,0 +1,24 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : python-installer
+version     : 0.5.1
+release     : 1
+homepage    : https://github.com/pypa/installer
+upstreams   :
+    - https://pypi.io/packages/source/i/installer/installer-0.5.1.tar.gz : f970995ec2bb815e2fdaf7977b26b2091e1e386f0f42eafd5ac811953dc5d445
+summary     : Low-level library for installing from a Python wheel distribution
+description : |
+    python-installer is a low-level library for installing a Python package from a wheel distribution. It provides basic functionality and abstractions for handling wheels and installing packages from wheels.
+license     :
+    - MIT
+# [LATER] Rebootstrap using %pyproject_build, %pyproject_install.
+#         Keep the python-flit-core builddep.
+networking  : yes
+builddeps   :
+    - python
+    - python-flit-core
+install     : |
+    pip3 install installer==%(version) --root=%(installroot)
