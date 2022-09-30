@@ -14,10 +14,10 @@ description : |
     python-build is a simple and correct PEP 517 build frontend.
 license     :
     - MIT
-networking  : yes
 rundeps     :
     - python-pep517
     - python-tomli
+# [LATER] Rebootstrap using %pyproject_build, %pyproject_install.
 build       : |
     %python
 install     : |
