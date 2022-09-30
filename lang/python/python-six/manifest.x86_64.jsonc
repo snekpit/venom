@@ -1,0 +1,21 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.1",
+	"packages": {
+		"python-six": {
+			"files": [
+				"/usr/lib/python3.10/site-packages/__pycache__/six.cpython-310.opt-1.pyc",
+				"/usr/lib/python3.10/site-packages/__pycache__/six.cpython-310.pyc",
+				"/usr/lib/python3.10/site-packages/six-1.16.0.dist-info/LICENSE",
+				"/usr/lib/python3.10/site-packages/six-1.16.0.dist-info/METADATA",
+				"/usr/lib/python3.10/site-packages/six-1.16.0.dist-info/RECORD",
+				"/usr/lib/python3.10/site-packages/six-1.16.0.dist-info/WHEEL",
+				"/usr/lib/python3.10/site-packages/six-1.16.0.dist-info/top_level.txt",
+				"/usr/lib/python3.10/site-packages/six.py"
+			]
+		}
+	},
+	"source-name": "python-six",
+	"source-release": "1",
+	"source-version": "1.16.0"
+}
