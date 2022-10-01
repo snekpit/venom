@@ -1,0 +1,25 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : vtm
+version     : 0.9.0
+release     : 1
+homepage    : https://github.com/netxs-group/vtm
+upstreams   :
+    - https://github.com/netxs-group/vtm/archive/refs/tags/v0.9.0.tar.gz : ebaaf2542e26d4b7ef5aad91ece9739b92ede2f8238ea37233e485ceb8e4afcd
+summary     : Terminal multiplexer with window manager and session sharing 
+description : |
+    Terminal multiplexer with window manager and session sharing 
+license     :
+    - MIT
+setup       : |
+    cd src
+    %cmake -DCMAKE_BUILD_TYPE=Release
+build       : |
+    cd src
+    %cmake_build
+install     : |
+    cd src
+    %cmake_install

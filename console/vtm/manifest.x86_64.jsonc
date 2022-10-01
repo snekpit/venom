@@ -1,0 +1,14 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.1",
+	"packages": {
+		"vtm": {
+			"files": [
+				"/usr/bin/vtm"
+			]
+		}
+	},
+	"source-name": "vtm",
+	"source-release": "1",
+	"source-version": "0.9.0"
+}
