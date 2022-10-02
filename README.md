@@ -72,11 +72,11 @@ Place extra files such as patches, vendor configs etc. in the `pkg/` dir inside 
 
 ### What to commit
 
-    git add stone.yml manifest.bin manifest.jsonc
+    git add stone.yml manifest.x86_64.bin manifest.x86_64.jsonc
 
-- manifest.bin : Binary moss readable file used to create moss collection stone.index files for dep resolution etc.
-- manifest.jsonc: Human readable version of manifest.bin used for git diff introspection purposes
-- stone.yml    : The actual build recipe
+- `manifest.x86_64.bin` Binary moss readable file used to create moss collection stone.index files for dep resolution etc.
+- `manifest.x86_64.jsonc` Human readable version of manifest.bin used for git diff introspection purposes
+- `stone.yml` The actual build recipe
 
 ### Commit messages
 
