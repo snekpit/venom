@@ -27,6 +27,8 @@ builddeps   :
     # libipt
     # source-highlight
 setup       : |
+    %patch %(pkgdir)/readline-8.2.patch
+
     %configure \
         --with-python=%(bindir)/python3 \
         --with-system-readline \
