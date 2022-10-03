@@ -28,7 +28,7 @@
 				"/usr/bin/xzless",
 				"/usr/bin/xzmore",
 				"/usr/lib/liblzma.so.5",
-				"/usr/lib/liblzma.so.5.2.6",
+				"/usr/lib/liblzma.so.5.2.7",
 				"/usr/share/locale/ca/LC_MESSAGES/xz.mo",
 				"/usr/share/locale/cs/LC_MESSAGES/xz.mo",
 				"/usr/share/locale/da/LC_MESSAGES/xz.mo",
@@ -47,6 +47,7 @@
 				"/usr/share/locale/ro/LC_MESSAGES/xz.mo",
 				"/usr/share/locale/sr/LC_MESSAGES/xz.mo",
 				"/usr/share/locale/sv/LC_MESSAGES/xz.mo",
+				"/usr/share/locale/tr/LC_MESSAGES/xz.mo",
 				"/usr/share/locale/uk/LC_MESSAGES/xz.mo",
 				"/usr/share/locale/vi/LC_MESSAGES/xz.mo",
 				"/usr/share/locale/zh_CN/LC_MESSAGES/xz.mo",
@@ -155,5 +156,5 @@
 	},
 	"source-name": "xz",
 	"source-release": "2",
-	"source-version": "5.2.6"
+	"source-version": "5.2.7"
 }
