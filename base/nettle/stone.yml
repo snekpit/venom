@@ -29,9 +29,10 @@ install     : |
 # check       : |
 #     %make check
 packages    :
-    - "%(name)-bin":
-        summary: "Nettle binaries"
+    - "%(name)-libs":
+        summary: "Nettle Libraries"
         description: |
-            Nettle binaries
+            Nettle Libraries
         paths:
-            - /usr/bin/*
+            - /usr/lib/libhogweed.so.*
+            - /usr/lib/libnettle.so.*

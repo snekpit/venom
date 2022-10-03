@@ -4,14 +4,6 @@
 	"packages": {
 		"nettle": {
 			"files": [
-				"/usr/lib/libhogweed.so.6",
-				"/usr/lib/libhogweed.so.6.6",
-				"/usr/lib/libnettle.so.8",
-				"/usr/lib/libnettle.so.8.6"
-			]
-		},
-		"nettle-bin": {
-			"files": [
 				"/usr/bin/nettle-hash",
 				"/usr/bin/nettle-lfib-stream",
 				"/usr/bin/nettle-pbkdf2",
@@ -93,6 +85,14 @@
 				"/usr/lib/libnettle.so",
 				"/usr/lib/pkgconfig/hogweed.pc",
 				"/usr/lib/pkgconfig/nettle.pc"
+			]
+		},
+		"nettle-libs": {
+			"files": [
+				"/usr/lib/libhogweed.so.6",
+				"/usr/lib/libhogweed.so.6.6",
+				"/usr/lib/libnettle.so.8",
+				"/usr/lib/libnettle.so.8.6"
 			]
 		}
 	},
