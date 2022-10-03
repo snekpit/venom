@@ -14,18 +14,20 @@ description : |
 upstreams   :
     - https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.37.3.tar.xz: 814641d7f61659cfbc17825d0462499ca1403e39ff53d76a8512050e6483e87a
 builddeps   :
-    - make
     - libxcrypt-devel
     - curl-devel
     - expat-devel
     - zlib-devel
     - binary(msgfmt)
+    - pkgconfig(libpcre2-8)
     - pkgconfig(openssl)
+rundeps     :
+    - pcre2
 setup       : |
     %configure --disable-static \
         --with-editor=/usr/bin/nano \
         --without-tcltk
 build       : |
-    %make
+    %make USE_LIBPCRE2=1
 install     : |
     %make_install
