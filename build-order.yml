@@ -1,0 +1,162 @@
+tiers:
+- tier0
+- tier1
+- tier2
+- tier3
+- tier4
+- tier5
+- tier6
+- tier7
+
+# Build tier0 and tier1 first. They contain important fixes applicable to almost all builds
+tier0:
+- autoconf
+- bzip2
+- xz
+- zlib
+
+tier1:
+- slibtool
+
+tier2:
+- brotli
+- dbus
+- duktape
+- fuse3
+- gdbm
+- inetutils
+- iproute2
+- kakoune
+- ldns
+- libevent
+- libtasn1
+- libunistring
+- libyaml
+- linux-pam
+- lua
+- lz4
+- ncurses
+- nghttp2
+- neofetch
+- nettle
+- opendoas
+- openssl
+- pcre2
+- pkgconf
+- python-babel
+- python-build
+- python-flit-core
+- python-jinja
+- python-markupsafe
+- python-packaging
+- python-pep517
+- python-pyparsing
+- python-pytz
+- python-tomli
+- python-wheel
+- shadow
+- sqlite
+- strace
+- tree
+- tzdata
+- unzip
+- vtm
+- wireguard-tools
+
+tier3:
+- curl
+  - brotli
+  - nghttp2
+- dash
+  - libedit
+- fish
+  - ncurses
+  - pcre2
+- gettext
+  - libunistring
+  - ncurses
+- git
+  - pcre2
+- grep
+  - pcre2
+- less
+  - ncurses
+  - pcre2
+- libedit
+  - ncurses
+- libidn2
+  - libunistring
+- nano
+  - ncurses
+- procps-ng
+  - ncurses
+- python
+  - ncurses
+- python-installer
+  - python-flit-core
+- readline
+  - ncurses
+- screen
+  - ncurses
+- systemd
+  - lz4
+  - python-babel
+  - python-jinja
+  - python-markupsafe
+  - python-pytz
+- tmux
+  - libevent
+  - ncurses
+- vim
+  - ncurses
+- wget
+  - brotli
+  - nghttp2
+- zsh
+  - gdbm
+  - ncurses
+
+tier4:
+- bash
+  - ncurses
+  - readline
+- gdb
+  - ncurses
+  - readline
+- libxml2
+  - ncurses
+  - readline
+- openssh
+  - ldns
+  - libedit
+- p11-kit
+  - gettext
+  - libtasn1
+- python-six
+  - python-build
+  - python-installer
+  - python-tomli
+  - python-wheel
+- ruby
+  - libyaml
+  - readline
+
+tier5:
+- gnutls
+  - libidn2
+  - libtasn1
+  - libunistring
+  - nettle
+  - p11-kit
+- libarchive
+  - libxml2 # Needed to fix libtool issue
+  - lz4
+
+tier6:
+- libmicrohttpd
+  - gnutl
+
+tier7:
+- elfutils
+  - libmicrohttpd
+  - sqlite
