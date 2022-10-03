@@ -17,27 +17,27 @@ description : |
 upstreams   :
     - https://github.com/systemd/systemd-stable/archive/v250.8.tar.gz: 638a2fc78828765fc97bc73f428205b6dc1d359149b6c6bfe4d2a649cba2cca8
 builddeps   :
-    - meson
-    - ninja
-    - acl-devel
-    - dbus-devel
+    - binary(m4)
     - gettext-devel
     - gperf
-    - libffi-devel
-    - zlib-devel
-    - zstd-devel
-    - util-linux-devel
-    - libcap-devel
-    - libxcrypt-devel
-    - openssl-devel
-    - curl-devel
-    - xz-devel
-    - linux-pam-devel
-    - zstd-devel
-    - binary(m4)
     - binutils
     - python-jinja
+    - pkgconfig(libacl)
+    - pkgconfig(blkid)
+    - pkgconfig(dbus-1)
+    - pkgconfig(fdisk)
+    - pkgconfig(libcap)
+    - pkgconfig(libcurl)
+    - pkgconfig(libffi)
+    - pkgconfig(liblz4)
+    - pkgconfig(liblzma)
     - pkgconfig(libpcre2-8)
+    - pkgconfig(libxcrypt)
+    - pkgconfig(libzstd)
+    - pkgconfig(mount)
+    - pkgconfig(openssl)
+    - pkgconfig(pam)
+    - pkgconfig(zlib)
 setup       : |
     %meson \
         -Dbpf-framework=false \
