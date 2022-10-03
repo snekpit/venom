@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: Zlib
 #
-name        : libfuse
+name        : fuse3
 version     : 3.12.0
 release     : 1
 homepage    : https://github.com/libfuse/libfuse

@@ -2,7 +2,7 @@
 {
 	"manifest-version": "0.1",
 	"packages": {
-		"libfuse": {
+		"fuse3": {
 			"files": [
 				"/usr/bin/fusermount3",
 				"/usr/lib/libfuse3.so.3",
@@ -13,7 +13,7 @@
 				"/usr/share/man/man8/mount.fuse3.8"
 			]
 		},
-		"libfuse-devel": {
+		"fuse3-devel": {
 			"files": [
 				"/usr/include/fuse3/cuse_lowlevel.h",
 				"/usr/include/fuse3/fuse.h",
@@ -26,7 +26,7 @@
 			]
 		}
 	},
-	"source-name": "libfuse",
+	"source-name": "fuse3",
 	"source-release": "1",
 	"source-version": "3.12.0"
 }
