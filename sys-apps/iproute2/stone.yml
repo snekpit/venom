@@ -25,5 +25,5 @@ setup       : |
 build       : |
     %make
 install     : |
-    SBINDIR=%(bindir) %make_install
+    SBINDIR=%(sbindir) %make_install
     %install_file %(pkgdir)/%(name).tmpfiles %(installroot)/%(tmpfilesdir)/%(name).conf

@@ -3,25 +3,30 @@
 	"manifest-version": "0.1",
 	"packages": {
 		"iproute2": {
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libm.so.6(x86_64))"
+			],
 			"files": [
-				"/usr/bin/bridge",
-				"/usr/bin/ctstat",
-				"/usr/bin/genl",
-				"/usr/bin/ifstat",
-				"/usr/bin/ip",
-				"/usr/bin/lnstat",
-				"/usr/bin/nstat",
-				"/usr/bin/routel",
-				"/usr/bin/rtacct",
-				"/usr/bin/rtmon",
-				"/usr/bin/rtstat",
-				"/usr/bin/ss",
-				"/usr/bin/tc",
 				"/usr/lib/tc/experimental.dist",
 				"/usr/lib/tc/normal.dist",
 				"/usr/lib/tc/pareto.dist",
 				"/usr/lib/tc/paretonormal.dist",
 				"/usr/lib/tmpfiles.d/iproute2.conf",
+				"/usr/sbin/bridge",
+				"/usr/sbin/ctstat",
+				"/usr/sbin/genl",
+				"/usr/sbin/ifstat",
+				"/usr/sbin/ip",
+				"/usr/sbin/lnstat",
+				"/usr/sbin/nstat",
+				"/usr/sbin/routel",
+				"/usr/sbin/rtacct",
+				"/usr/sbin/rtmon",
+				"/usr/sbin/rtstat",
+				"/usr/sbin/ss",
+				"/usr/sbin/tc",
 				"/usr/share/bash-completion/completions/devlink",
 				"/usr/share/bash-completion/completions/tc",
 				"/usr/share/defaults/iproute2/bpf_pinning",
@@ -168,12 +173,14 @@
 				"/usr/share/man/man8/vdpa-dev.8",
 				"/usr/share/man/man8/vdpa-mgmtdev.8",
 				"/usr/share/man/man8/vdpa.8"
-			]
+			],
+			"name": "iproute2"
 		},
 		"iproute2-devel": {
 			"files": [
 				"/usr/include/iproute2/bpf_elf.h"
-			]
+			],
+			"name": "iproute2-devel"
 		}
 	},
 	"source-name": "iproute2",
