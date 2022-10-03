@@ -16,10 +16,8 @@ description : |
 upstreams   :
     - http://www.greenwoodsoftware.com/less/less-608.tar.gz: a69abe2e0a126777e021d3b73aa3222e1b261f10e64624d41ec079685a6ac209
 builddeps   :
-    - make
-    - libcxx-devel
-    - ncurses-devel
     - pkgconfig(libpcre2-8)
+    - pkgconfig(ncursesw)
 setup       : |
     %configure --with-regex=pcre2
 build       : |

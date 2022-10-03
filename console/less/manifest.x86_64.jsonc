@@ -11,13 +11,6 @@
 				"/usr/share/man/man1/lessecho.1",
 				"/usr/share/man/man1/lesskey.1"
 			]
-		},
-		"less-dbginfo": {
-			"files": [
-				"/usr/lib/debug/.build-id/8c/ec4209ce52e5bd.debug",
-				"/usr/lib/debug/.build-id/ac/d5d61e71afaba9.debug",
-				"/usr/lib/debug/.build-id/cd/08eb5c71fd51a7.debug"
-			]
 		}
 	},
 	"source-name": "less",

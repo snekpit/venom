@@ -14,12 +14,9 @@ description : |
     YAML 1.1 library
 license     :
     - MIT
-builddeps   :
-    - make
 setup       : |
     %configure --disable-static
 build       : |
     %make
 install     : |
     %make_install
-    rm -v %(installroot)/%(libdir)/*.la

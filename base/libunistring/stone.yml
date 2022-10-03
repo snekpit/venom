@@ -13,15 +13,12 @@ description : |
     Library for manipulating Unicode strings and C strings
 upstreams   :
     - https://ftp.gnu.org/gnu/libunistring/libunistring-1.0.tar.gz: 3c0184c0e492d7c208ce31d25dd1d2c58f0c3ed6cbbe032c5b248cddad318544
-builddeps   :
-    - make
 setup       : |
     %configure --disable-static
 build       : |
     %make
 install     : |
     %make_install
-    rm -v %(installroot)/%(libdir)/*.la
 check       : |
     %make check
 packages    :

@@ -14,10 +14,7 @@ description : |
 upstreams   :
     - https://mirrors.kernel.org/gnu/gettext/gettext-0.21.tar.xz : d20fcbb537e02dcf1383197ba05bd0734ef7bf5db06bdb241eb69b7d16b73192
 builddeps   :
-    - autoconf
-    - libcxx-devel
     - libunistring-devel
-    - make
     - pkgconfig(libxml-2.0)
     - pkgconfig(ncursesw)
 checkdeps   :
@@ -33,7 +30,6 @@ build       : |
     %make
 install     : |
     %make_install
-    rm -v %(installroot)/%(libdir)/*.la
 
     # Clean up examples which aren't particularly helpful
     rm -rf %(installroot)/usr/share/doc/gettext/examples

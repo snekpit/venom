@@ -15,7 +15,6 @@ upstreams   :
     # TODO: Switch to git source and release tag when Boulder supports git upstreams (and remove corresponding patch)
     - https://github.com/google/brotli/archive/refs/tags/v1.0.9.tar.gz: f9e8d81d0405ba66d181529af42a3354f838c939095ff99930da6aa9cdf6fe46
 builddeps   :
-    - make
     - pkgconfig(python3)
 setup       : |
     %patch %(pkgdir)/0001-Strip-out-building-of-static-libraries.patch
@@ -33,7 +32,7 @@ install     : |
     %cmake_install
     %python_install
 check       : |
-    make test
+    %make test
     ## The test data for this is not retrieved unless we pull the full git source and checkout the release commit.
     # IE this is not possible until Boulder supports git URIs
     python3 setup.py test

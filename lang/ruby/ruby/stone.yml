@@ -15,7 +15,6 @@ upstreams   :
     - https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz: 61843112389f02b735428b53bb64cf988ad9fb81858b8248e22e57336f24a83e
 builddeps   :
     - gdbm-devel
-    - make
     - pkgconfig(gmp)
     - pkgconfig(libcrypt)
     - pkgconfig(libffi)

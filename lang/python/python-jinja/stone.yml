@@ -13,8 +13,6 @@ description : |
     Jinja2 is a template engine written in pure Python.
 upstreams   :
     - https://files.pythonhosted.org/packages/source/J/Jinja2/Jinja2-3.1.2.tar.gz: 31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852
-builddeps   :
-    - python
 # checkdeps   :
 #     - python-markupsafe
 #     - python-pytest

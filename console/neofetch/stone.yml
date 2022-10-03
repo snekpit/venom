@@ -14,8 +14,5 @@ description : |
     Command-line system information tool
 license     :
     - MIT
-builddeps   :
-        make
-# make_install macro does not depend on make
 install     : |
     %make_install

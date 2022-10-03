@@ -13,15 +13,6 @@
 				"/usr/lib/libbrotlienc.so.1.0.9"
 			]
 		},
-		"brotli-dbginfo": {
-			"files": [
-				"/usr/lib/debug/.build-id/1b/d0992cbf91d595.debug",
-				"/usr/lib/debug/.build-id/b0/234793747e4c65.debug",
-				"/usr/lib/debug/.build-id/bd/db8a78e2259ff1.debug",
-				"/usr/lib/debug/.build-id/ec/e4d711988ce345.debug",
-				"/usr/lib/debug/.build-id/fe/9a21a9e5823c12.debug"
-			]
-		},
 		"brotli-devel": {
 			"files": [
 				"/usr/include/brotli/decode.h",

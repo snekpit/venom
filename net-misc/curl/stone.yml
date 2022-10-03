@@ -14,14 +14,12 @@ description : |
 upstreams   :
     - https://github.com/curl/curl/releases/download/curl-7_85_0/curl-7.85.0.tar.xz: 88b54a6d4b9a48cb4d873c7056dcba997ddd5b7be5a2d537a4acb55c20b04be6
 builddeps   :
-    - make
-    - libcxx-devel
-    - jansson-devel
-    - nghttp2-devel
-    - openssl-devel
-    - zlib-devel
-    - zstd-devel
+    - pkgconfig(jansson)
     - pkgconfig(libbrotlidec)
+    - pkgconfig(libnghttp2)
+    - pkgconfig(libzstd)
+    - pkgconfig(openssl)
+    - pkgconfig(zlib)
 setup       : |
     %configure --disable-static \
         --with-openssl \

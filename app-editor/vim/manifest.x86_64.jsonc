@@ -4,12 +4,7 @@
 	"packages": {
 		"vim": {
 			"files": [
-				"/usr/bin/ex",
-				"/usr/bin/rview",
-				"/usr/bin/rvim",
-				"/usr/bin/view",
 				"/usr/bin/vim",
-				"/usr/bin/vimdiff",
 				"/usr/bin/vimtutor",
 				"/usr/bin/xxd",
 				"/usr/share/applications/gvim.desktop",

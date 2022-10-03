@@ -5,7 +5,6 @@
 		"libidn2": {
 			"files": [
 				"/usr/bin/idn2",
-				"/usr/lib/libidn2.la",
 				"/usr/lib/libidn2.so.0",
 				"/usr/lib/libidn2.so.0.3.8",
 				"/usr/share/info/libidn2.info",

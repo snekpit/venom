@@ -6,7 +6,6 @@
 			"files": [
 				"/usr/bin/curl",
 				"/usr/bin/curl-config",
-				"/usr/lib/libcurl.la",
 				"/usr/lib/libcurl.so.4",
 				"/usr/lib/libcurl.so.4.8.0",
 				"/usr/share/man/man1/curl-config.1",
@@ -487,12 +486,6 @@
 				"/usr/share/man/man3/libcurl-tutorial.3",
 				"/usr/share/man/man3/libcurl-url.3",
 				"/usr/share/man/man3/libcurl.3"
-			]
-		},
-		"curl-dbginfo": {
-			"files": [
-				"/usr/lib/debug/.build-id/8a/b6da154984a55a.debug",
-				"/usr/lib/debug/.build-id/e1/114562c131b268.debug"
 			]
 		},
 		"curl-devel": {

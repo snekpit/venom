@@ -23,5 +23,3 @@ build       : |
     %make
 install     : |
     %make_install
-
-    rm -v %(installroot)/usr/lib/libprocps.la

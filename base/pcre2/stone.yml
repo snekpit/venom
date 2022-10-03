@@ -14,7 +14,6 @@ description : |
 upstreams   :
     - https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.40/pcre2-10.40.tar.gz: ded42661cab30ada2e72ebff9e725e745b4b16ce831993635136f2ef86177724
 builddeps   :
-    - make
     - pkgconfig(bzip2)
     - pkgconfig(zlib)
 # checkdeps   :
@@ -30,7 +29,6 @@ install     : |
     %make_install
     rm -v %(installroot)/usr/bin/pcre2grep
     rm -v %(installroot)/usr/bin/pcre2test
-    rm -v %(installroot)/%(libdir)/*.la
     rm -v %(installroot)/usr/share/man/man1/pcre2grep.1
     rm -v %(installroot)/usr/share/man/man1/pcre2test.1
     rm -rfv %(installroot)/usr/share/man/man3/

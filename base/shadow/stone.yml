@@ -9,8 +9,8 @@ description : |
 upstreams   :
     - https://github.com/shadow-maint/shadow/releases/download/4.12.3/shadow-4.12.3.tar.xz: 3d3ec447cfdd11ab5f0486ebc47d15718349d13fea41fc8584568bc118083ccd
 builddeps   :
-    - acl-devel
-    - attr-devel
+    - pkgconfig(libacl)
+    - pkgconfig(libattr)
     - pkgconfig(libxcrypt)
     - pkgconfig(pam)
 setup       : |

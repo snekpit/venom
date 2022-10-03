@@ -6571,21 +6571,6 @@
 				"/usr/share/terminfo/z/ztx11"
 			]
 		},
-		"ncurses-dbginfo": {
-			"files": [
-				"/usr/lib/debug/.build-id/00/cc8643f4e18883.debug",
-				"/usr/lib/debug/.build-id/1b/8f28e1d338e04b.debug",
-				"/usr/lib/debug/.build-id/26/231b12a182d62e.debug",
-				"/usr/lib/debug/.build-id/29/c94a147f5f2017.debug",
-				"/usr/lib/debug/.build-id/41/5de9e6dae8578b.debug",
-				"/usr/lib/debug/.build-id/5c/7ab906cd70a0f8.debug",
-				"/usr/lib/debug/.build-id/5c/c1e681f56cf4e7.debug",
-				"/usr/lib/debug/.build-id/74/3c70408765fd49.debug",
-				"/usr/lib/debug/.build-id/e3/11a47911459c7b.debug",
-				"/usr/lib/debug/.build-id/e4/3791af1c0d83ff.debug",
-				"/usr/lib/debug/.build-id/f2/d886706e1a70a2.debug"
-			]
-		},
 		"ncurses-devel": {
 			"files": [
 				"/usr/include/curses.h",

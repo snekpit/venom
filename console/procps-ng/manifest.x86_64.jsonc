@@ -117,28 +117,6 @@
 				"/usr/share/man/uk/man8/vmstat.8"
 			]
 		},
-		"procps-ng-dbginfo": {
-			"files": [
-				"/usr/lib/debug/.build-id/0e/35de26596c7f4e.debug",
-				"/usr/lib/debug/.build-id/0e/7f0cbd3787e7e4.debug",
-				"/usr/lib/debug/.build-id/18/f0d81a598c3213.debug",
-				"/usr/lib/debug/.build-id/1c/3dc903e2cced83.debug",
-				"/usr/lib/debug/.build-id/3e/b6b902de6b2567.debug",
-				"/usr/lib/debug/.build-id/46/72f7845f9ffb7d.debug",
-				"/usr/lib/debug/.build-id/4d/1ca2966c38315c.debug",
-				"/usr/lib/debug/.build-id/50/a74b40ef124e10.debug",
-				"/usr/lib/debug/.build-id/64/997bdd63793150.debug",
-				"/usr/lib/debug/.build-id/83/8923fde15e3993.debug",
-				"/usr/lib/debug/.build-id/83/8923fde15e3993.debug",
-				"/usr/lib/debug/.build-id/83/8923fde15e3993.debug",
-				"/usr/lib/debug/.build-id/bd/830a8b20577ecc.debug",
-				"/usr/lib/debug/.build-id/c4/c66cdc9e8aa288.debug",
-				"/usr/lib/debug/.build-id/e3/0c65b1f3b690dc.debug",
-				"/usr/lib/debug/.build-id/ea/2ce598c0bd234b.debug",
-				"/usr/lib/debug/.build-id/ee/8269714ac3bd66.debug",
-				"/usr/lib/debug/.build-id/f8/64c7a5bb1ae213.debug"
-			]
-		},
 		"procps-ng-devel": {
 			"files": [
 				"/usr/include/proc/alloc.h",

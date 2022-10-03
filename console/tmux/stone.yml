@@ -15,8 +15,6 @@ description : |
 license     :
     - ISC
 builddeps   :
-   - perl # Bug? automake requires perl for aclocal binary
-   - m4
    - pkgconfig(libevent)
    - pkgconf-devel # Bug? to get usr/share/aclocal/pkg.m4
    - pkgconfig(ncursesw)

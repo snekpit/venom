@@ -14,8 +14,6 @@ description : |
 upstreams   :
     - https://www.python.org/ftp/python/3.10.7/Python-3.10.7.tar.xz: 6eed8415b7516fb2f260906db5d48dd4c06acc0cb24a7d6cc15296a604dcdc48
 builddeps   :
-    - make
-    - libcxx-devel
     - libxcrypt-devel
     - libffi-devel
     - xz-devel
@@ -42,8 +40,7 @@ install     : |
 
     ln -s %(bindir)/python3 %(installroot)/%(bindir)/python
 packages    :
-    # This should be "%(name)-devel". See https://github.com/serpent-os/moss-format/issues/2
-    - python-devel:
+    - "%(name)-devel":
         rundeps:
             # python3 /usr/lib/python*/config-*-x86_64-linux-gnu/python-config.py --ldflags
             # returns "-lcrypt" among the other things. Make sure it's available.

@@ -55,11 +55,6 @@
 				"/usr/share/locale/zh_TW/LC_MESSAGES/grep.mo",
 				"/usr/share/man/man1/grep.1"
 			]
-		},
-		"grep-dbginfo": {
-			"files": [
-				"/usr/lib/debug/.build-id/54/793ffe2fe512c8.debug"
-			]
 		}
 	},
 	"source-name": "grep",

@@ -9,13 +9,9 @@ description : |
 upstreams   :
     - https://zlib.net/zlib-1.2.12.tar.gz: 91844808532e5ce316b3c010929493c0244f3d37593afd6de04f71821d5136d9
 builddeps   :
-    - patch
-    - make
     - bison
-    - m4
-    - gzip
-    - texinfo
     - flex
+    - texinfo
 environment : |
     # Hack for lack of cc symlink
     mkdir -p bin
