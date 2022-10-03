@@ -1,0 +1,16 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.1",
+	"packages": {
+		"dash": {
+			"files": [
+				"/usr/bin/dash",
+				"/usr/bin/sh",
+				"/usr/share/man/man1/dash.1"
+			]
+		}
+	},
+	"source-name": "dash",
+	"source-release": "2",
+	"source-version": "0.5.11.5"
+}
