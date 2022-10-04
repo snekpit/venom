@@ -1,52 +1,40 @@
-# This fails due to the error:
-# [strip] /usr/lib/golang/src/runtime/race/race_linux_arm64.syso
-# elf.ELFException@../subprojects/moss-vendor/vendor/elf/elf-d/source/elf/package.d(121): Enforcement failed
-# ----------------
-# ??:? [0x4730f6]
-# (a bunch more repeats of the above)
 name        : golang
 version     : 1.19.1
 release     : 1
-summary     : The Go programming language
-license     : BSD-3-Clause
 homepage    : https://golang.org
-description : |
-    Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
 upstreams   :
-    - https://golang.org/dl/go1.19.1.src.tar.gz: 27871baa490f3401414ad793fba49086f6c855b1c584385ed7771e1204c7e179
-    - https://go.dev/dl/go1.19.1.linux-amd64.tar.gz:
+    - https://golang.org/dl/go1.19.1.src.tar.gz : 27871baa490f3401414ad793fba49086f6c855b1c584385ed7771e1204c7e179
+    - https://go.dev/dl/go1.19.1.linux-amd64.tar.gz :
         hash: acc512fbab4f716a8f97a8b3fbaa9ddd39606a28be6c2515ef7c6c6311acffde
         unpack: false
+summary     : The Go programming language
+description : |
+    Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
+license     : BSD-3-Clause
 builddeps   :
     - bash
-    - make
-    - clang
-    - lld
-    - llvm
-    # needs bootstrappin'
-    # - golang
+    # - golang [LATER] after bootstrapping.
 environment : |
-    # Pre-bootstrap
-    export GOROOT_BOOTSTRAP="%(workdir)/go"
-    export GOROOT_FINAL="%(workdir)/go"
-    # Post-bootstrap
-    # export GOROOT_BOOTSTRAP="%(libdir)/golang"
-    # export GOROOT_FINAL="%(libdir)/golang"
+    export GOROOT_BOOTSTRAP="%(workdir)/go" # Remove after bootstrapping.
+    export GOROOT_FINAL="%(libdir)/%(name)"
 
-    # "build cache is required, but could not be located: GOCACHE is not defined and neither $XDG_CACHE_HOME nor $HOME are defined"
-    export GOCACHE="%(workdir)/.cache"
+    # Should this be set by boulder automatically?
+    export XDG_CACHE_HOME="%(workdir)/.cache"
 setup       : |
-    tar -xf %(sourcedir)/go1.19.1.linux-amd64.tar.gz
+    tar xf %(sourcedir)/go1.19.1.linux-amd64.tar.gz
+    %patch %(pkgdir)/stateless/x509-certificate-path.patch
 build       : |
-    cd src
-    bash ./make.bash -v
+    cd src && ./make.bash -v
+# TODO: Properly filter unwanted content to achieve a clean package.
 install     : |
-    %install_dir %(installroot)/%(libdir)/golang
+    rm -rf .cache go
+    # Testdata searches for /libexec/ld-elf.so.1.
+    # This is just data fed into tests, but boulder scans it regardless.
+    find -type d -name testdata -exec rm -rf {} +
 
-    cp -a *  %(installroot)/%(libdir)/golang
-
-    ## TODO I realized at this point that this package can't be built until strip can be disabled. 
-    # As a result I didn't bother to setup the rest of the symlinks and other installed bits.
+    install -Dm00755 bin/* -t %(installroot)/%(bindir)
+    %install_dir %(installroot)/%(libdir)/%(name)
+    find -mindepth 1 -maxdepth 1 -type d -not -name bin -exec cp -a {} %(installroot)/%(libdir)/%(name) \;
 # check      : |
-# TODO: Also the build hangs during the test phase, and a bunch of tests fail probably due to networking issues
-#     bash ./run.bash -v -v -v -k
+# Fails because there is no network.
+#     cd src && ./run.bash -v -v -v -k
