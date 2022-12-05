@@ -1,11 +1,11 @@
 name        : golang
-version     : 1.19.1
+version     : 1.19.3
 release     : 1
 homepage    : https://golang.org
 upstreams   :
-    - https://golang.org/dl/go1.19.1.src.tar.gz : 27871baa490f3401414ad793fba49086f6c855b1c584385ed7771e1204c7e179
-    - https://go.dev/dl/go1.19.1.linux-amd64.tar.gz :
-        hash: acc512fbab4f716a8f97a8b3fbaa9ddd39606a28be6c2515ef7c6c6311acffde
+    - https://golang.org/dl/go1.19.3.src.tar.gz : 18ac263e39210bcf68d85f4370e97fb1734166995a1f63fb38b4f6e07d90d212
+    - https://go.dev/dl/go1.19.3.linux-amd64.tar.gz :
+        hash: 74b9640724fd4e6bb0ed2a1bc44ae813a03f1e72a4c76253e2d5c015494430ba
         unpack: false
 summary     : The Go programming language
 description : |
@@ -21,7 +21,7 @@ environment : |
     # Should this be set by boulder automatically?
     export XDG_CACHE_HOME="%(workdir)/.cache"
 setup       : |
-    tar xf %(sourcedir)/go1.19.1.linux-amd64.tar.gz
+    tar xf %(sourcedir)/go1.19.3.linux-amd64.tar.gz
     %patch %(pkgdir)/stateless/x509-certificate-path.patch
 build       : |
     cd src && ./make.bash -v
