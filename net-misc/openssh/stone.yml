@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Zlib
 #
 name        : openssh
-version     : "9.0_p1"
+version     : "9.1_p1"
 release     : 1
 summary     : OpenSSH (OpenBSD Secure Shell)
 license     : 
@@ -16,7 +16,7 @@ homepage    : https://www.openssh.com/
 description : |
     OpenSSH is a free version of secure shell tools developed by the OpenBSD project to help facilitate secure connections and communications.
 upstreams   :
-    - https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.0p1.tar.gz: 03974302161e9ecce32153cfa10012f1e65c8f3750f573a73ab1befd5972a28a
+    - https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.1p1.tar.gz: 19f85009c7e3e23787f0236fbb1578392ab4d4bf9f8ec5fe6bc1cd7e8bfdd288
 builddeps   :
     - pkgconfig(libcrypt)
     - pkgconfig(libcrypto)
