@@ -3,6 +3,16 @@
 	"manifest-version": "0.1",
 	"packages": {
 		"curl": {
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libbrotlidec.so.1(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libcrypto.so.3(x86_64))",
+				"soname(libnghttp2.so.14(x86_64))",
+				"soname(libssl.so.3(x86_64))",
+				"soname(libz.so.1(x86_64))",
+				"soname(libzstd.so.1(x86_64))"
+			],
 			"files": [
 				"/usr/bin/curl",
 				"/usr/bin/curl-config",
@@ -390,6 +400,7 @@
 				"/usr/share/man/man3/CURLOPT_WILDCARDMATCH.3",
 				"/usr/share/man/man3/CURLOPT_WRITEDATA.3",
 				"/usr/share/man/man3/CURLOPT_WRITEFUNCTION.3",
+				"/usr/share/man/man3/CURLOPT_WS_OPTIONS.3",
 				"/usr/share/man/man3/CURLOPT_XFERINFODATA.3",
 				"/usr/share/man/man3/CURLOPT_XFERINFOFUNCTION.3",
 				"/usr/share/man/man3/CURLOPT_XOAUTH2_BEARER.3",
@@ -475,6 +486,9 @@
 				"/usr/share/man/man3/curl_url_strerror.3",
 				"/usr/share/man/man3/curl_version.3",
 				"/usr/share/man/man3/curl_version_info.3",
+				"/usr/share/man/man3/curl_ws_meta.3",
+				"/usr/share/man/man3/curl_ws_recv.3",
+				"/usr/share/man/man3/curl_ws_send.3",
 				"/usr/share/man/man3/libcurl-easy.3",
 				"/usr/share/man/man3/libcurl-env.3",
 				"/usr/share/man/man3/libcurl-errors.3",
@@ -486,6 +500,12 @@
 				"/usr/share/man/man3/libcurl-tutorial.3",
 				"/usr/share/man/man3/libcurl-url.3",
 				"/usr/share/man/man3/libcurl.3"
+			],
+			"name": "curl",
+			"provides": [
+				"binary(curl)",
+				"binary(curl-config)",
+				"soname(libcurl.so.4(x86_64))"
 			]
 		},
 		"curl-devel": {
@@ -501,13 +521,18 @@
 				"/usr/include/curl/system.h",
 				"/usr/include/curl/typecheck-gcc.h",
 				"/usr/include/curl/urlapi.h",
+				"/usr/include/curl/websockets.h",
 				"/usr/lib/libcurl.so",
 				"/usr/lib/pkgconfig/libcurl.pc",
 				"/usr/share/aclocal/libcurl.m4"
+			],
+			"name": "curl-devel",
+			"provides": [
+				"pkgconfig(libcurl)"
 			]
 		}
 	},
 	"source-name": "curl",
 	"source-release": "2",
-	"source-version": "7.85.0"
+	"source-version": "7.86.0"
 }
