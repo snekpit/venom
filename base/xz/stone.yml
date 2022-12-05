@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: Zlib
 #
 name        : xz
-version     : 5.2.7
+version     : 5.2.9
 release     : 2
 summary     : Library and command line tools for XZ and LZMA compressed files
-license     : 
+license     :
     - LGPL-2.1-or-later
     - GPL-2.0-or-later
     - Public-Domain
@@ -15,7 +15,7 @@ homepage    : https://tukaani.org/xz
 description : |
     Library and command line tools for XZ and LZMA compressed files
 upstreams   :
-    - https://tukaani.org/xz/xz-5.2.7.tar.gz: 06327c2ddc81e126a6d9a78b0be5014b976a2c0832f492dcfc4755d7facf6d33
+    - https://tukaani.org/xz/xz-5.2.9.tar.gz: e982ea31b81543d7ee2b6fa34c2ad11760e1c50c6f4475add8ba0f2f005f07b4
 setup       : |
     %configure --disable-static \
                --disable-rpath
