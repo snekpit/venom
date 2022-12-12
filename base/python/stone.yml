@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Zlib
 #
 name        : python
-version     : 3.10.7
+version     : 3.10.9
 release     : 2
 summary     : Python language interpreter
 license     : Python-2.0
@@ -12,8 +12,9 @@ homepage    : https://www.python.org
 description : |
     Python language interpreter
 upstreams   :
-    - https://www.python.org/ftp/python/3.10.7/Python-3.10.7.tar.xz: 6eed8415b7516fb2f260906db5d48dd4c06acc0cb24a7d6cc15296a604dcdc48
+    - https://www.python.org/ftp/python/3.10.9/Python-3.10.9.tar.xz: 5ae03e308260164baba39921fdb4dbf8e6d03d8235a939d4582b33f0b5e46a83
 builddeps   :
+    - bzip2-devel
     - libxcrypt-devel
     - libffi-devel
     - xz-devel
