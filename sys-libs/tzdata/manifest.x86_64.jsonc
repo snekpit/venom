@@ -99,6 +99,7 @@
 				"/usr/share/zoneinfo/America/Cayman",
 				"/usr/share/zoneinfo/America/Chicago",
 				"/usr/share/zoneinfo/America/Chihuahua",
+				"/usr/share/zoneinfo/America/Ciudad_Juarez",
 				"/usr/share/zoneinfo/America/Coral_Harbour",
 				"/usr/share/zoneinfo/America/Cordoba",
 				"/usr/share/zoneinfo/America/Costa_Rica",
@@ -697,6 +698,7 @@
 				"/usr/share/zoneinfo/posix/America/Cayman",
 				"/usr/share/zoneinfo/posix/America/Chicago",
 				"/usr/share/zoneinfo/posix/America/Chihuahua",
+				"/usr/share/zoneinfo/posix/America/Ciudad_Juarez",
 				"/usr/share/zoneinfo/posix/America/Coral_Harbour",
 				"/usr/share/zoneinfo/posix/America/Cordoba",
 				"/usr/share/zoneinfo/posix/America/Costa_Rica",
@@ -1294,6 +1296,7 @@
 				"/usr/share/zoneinfo/right/America/Cayman",
 				"/usr/share/zoneinfo/right/America/Chicago",
 				"/usr/share/zoneinfo/right/America/Chihuahua",
+				"/usr/share/zoneinfo/right/America/Ciudad_Juarez",
 				"/usr/share/zoneinfo/right/America/Coral_Harbour",
 				"/usr/share/zoneinfo/right/America/Cordoba",
 				"/usr/share/zoneinfo/right/America/Costa_Rica",
@@ -1797,10 +1800,11 @@
 				"/usr/share/zoneinfo/right/Zulu",
 				"/usr/share/zoneinfo/tzdata.zi",
 				"/usr/share/zoneinfo/zone.tab"
-			]
+			],
+			"name": "tzdata"
 		}
 	},
 	"source-name": "tzdata",
 	"source-release": "1",
-	"source-version": "2022d"
+	"source-version": "2022g"
 }
