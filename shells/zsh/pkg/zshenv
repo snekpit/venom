@@ -1,5 +1,0 @@
-if [ -f /etc/zshenv ]; then
-	source /etc/zshenv
-elif [ -f /etc/zsh/zshenv ]; then
-	source /etc/zsh/zshenv
-fi

@@ -1,5 +1,0 @@
-if [ -f /etc/zlogout ]; then
-	source /etc/zlogout
-elif [ -f /etc/zsh/zlogout ]; then
-	source /etc/zsh/zlogout
-fi
