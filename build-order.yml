@@ -8,15 +8,6 @@ tiers:
 - tier6
 - tier7
 
-# Build tier0 and tier1 first. They contain important fixes applicable to almost all builds
-tier0:
-- autoconf
-- bzip2
-- xz
-- zlib
-
-tier1:
-- slibtool
 
 tier2:
 - brotli
@@ -35,7 +26,6 @@ tier2:
 - linux-pam
 - lua
 - lz4
-- ncurses
 - nghttp2
 - neofetch
 - nettle
