@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Zlib
 #
 name        : systemd
-version     : '250.8'
+version     : '251.9'
 release     : 2
 summary     : A System and Service Manager
 license     :
@@ -15,7 +15,7 @@ homepage    : http://www.freedesktop.org/wiki/Software/systemd
 description : |
     A System and Service Manager
 upstreams   :
-    - https://github.com/systemd/systemd-stable/archive/v250.8.tar.gz: 638a2fc78828765fc97bc73f428205b6dc1d359149b6c6bfe4d2a649cba2cca8
+    - https://github.com/systemd/systemd-stable/archive/v251.9.tar.gz: 1a59b8d0382b54be0fc0f8e95d79f5785feef1a2c43f317e31eb8ebf94244dd5
 builddeps   :
     - binary(m4)
     - gettext-devel

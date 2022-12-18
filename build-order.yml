@@ -1,71 +1,28 @@
-tiers:
-- tier2
-- tier3
-- tier4
-- tier5
-- tier6
-- tier7
-
-
 tier2:
 - dbus
-- duktape
 - fuse3
 - inetutils
 - iproute2
 - kakoune
-- ldns
-- libevent
-- libtasn1
-- libyaml
-- linux-pam
 - lua
 - neofetch
-- nettle
 - opendoas
 - pkgconf
-- shadow
-- sqlite
 - strace
 - tree
-- tzdata
 - vtm
 - wireguard-tools
 
 tier3:
 - dash
-  - libedit
-- libedit
-- libidn2
 - procps-ng
 - systemd
 - tmux
-  - libevent
 
 tier4:
 - bash
 - gdb
-- openssh
-  - ldns
-  - libedit
-- p11-kit
-  - libtasn1
 - ruby
-  - libyaml
-
-tier5:
-- gnutls
-  - libidn2
-  - libtasn1
-  - nettle
-  - p11-kit
-- libarchive
-
-tier6:
-- libmicrohttpd
-  - gnutls
 
 tier7:
 - elfutils
-  - libmicrohttpd
-  - sqlite
