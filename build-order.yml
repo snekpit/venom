@@ -24,17 +24,6 @@ tier2:
 - nettle
 - opendoas
 - pkgconf
-- python-babel
-- python-build
-- python-flit-core
-- python-jinja
-- python-markupsafe
-- python-packaging
-- python-pep517
-- python-pyparsing
-- python-pytz
-- python-tomli
-- python-wheel
 - shadow
 - sqlite
 - strace
@@ -49,14 +38,7 @@ tier3:
 - libedit
 - libidn2
 - procps-ng
-- python
-- python-installer
-  - python-flit-core
 - systemd
-  - python-babel
-  - python-jinja
-  - python-markupsafe
-  - python-pytz
 - tmux
   - libevent
 
@@ -68,11 +50,6 @@ tier4:
   - libedit
 - p11-kit
   - libtasn1
-- python-six
-  - python-build
-  - python-installer
-  - python-tomli
-  - python-wheel
 - ruby
   - libyaml
 
