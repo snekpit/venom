@@ -1,28 +1,11 @@
 tier2:
-- dbus
 - fuse3
-- inetutils
-- iproute2
 - kakoune
-- lua
-- neofetch
 - opendoas
-- pkgconf
 - strace
 - tree
 - vtm
 - wireguard-tools
 
 tier3:
-- dash
-- procps-ng
-- systemd
 - tmux
-
-tier4:
-- bash
-- gdb
-- ruby
-
-tier7:
-- elfutils
