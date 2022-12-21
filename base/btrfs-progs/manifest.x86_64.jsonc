@@ -30,7 +30,8 @@
 				"/usr/lib/libbtrfsutil.so.1",
 				"/usr/lib/libbtrfsutil.so.1.2.0",
 				"/usr/lib/udev/rules.d/64-btrfs-dm.rules",
-				"/usr/lib/udev/rules.d/64-btrfs-zoned.rules"
+				"/usr/lib/udev/rules.d/64-btrfs-zoned.rules",
+				"/usr/share/bash-completion/completions/btrfs"
 			],
 			"name": "btrfs-progs",
 			"provides": [

@@ -29,3 +29,4 @@ build       : |
     %make
 install     : |
     %make_install
+    %install_file btrfs-completion %(installroot)/%(completionsdir)/btrfs
