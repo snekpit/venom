@@ -15,16 +15,17 @@ description : |
 license     :
     - GPL-2.0-or-later
     - LGPL-2.1-or-later
-builddeps   :
+builddeps   : # TODO needs python-sphinx for docs
     - pkgconfig(blkid)
     - pkgconfig(ext2fs)
     - pkgconfig(libudev)
     - pkgconfig(libzstd)
     - pkgconfig(lzo2)
-    - pkgconfig(python3)
     - pkgconfig(zlib)
 setup      : |
-    %configure --disable-static --disable-documentation
+    %configure --disable-static \
+               --disable-documentation \
+               --disable-python
 build       : |
     %make
 install     : |
