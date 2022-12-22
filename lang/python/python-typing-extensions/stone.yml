@@ -1,0 +1,30 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : python-typing-extensions
+version     : '4.4.0'
+release     : 1
+homepage    : https://github.com/python/typing_extensions
+upstreams   :
+    - https://files.pythonhosted.org/packages/source/t/typing_extensions/typing_extensions-4.4.0.tar.gz : 1511434bb92bf8dd198c12b1cc812e800d4181cfcb867674e0f8279cc93087aa
+summary     : Backported and experimental type hints for Python
+description : |
+    The typing_extensions module serves two related purposes:
+      - Enable use of new type system features on older Python versions.
+      - Enable experimentation with new type system PEPs before they are accepted and added to the typing module.
+license     :
+    - PSF-2.0
+builddeps   :
+    # [LATER] Should be automatically pulled in.
+    - binary(python3)
+    - python-flit-core
+build       : |
+    %pyproject_build
+install     : |
+    %pyproject_install
+#check       : |
+# Can't test before https://github.com/python/typing_extensions/issues/61 is fixed.
+#    cd src
+#    python3 ./test_typing_extensions.py
