@@ -1,0 +1,27 @@
+#
+# SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : alsa-lib
+version     : '1.2.8'
+release     : 1
+homepage    : https://www.alsa-project.org
+upstreams   :
+    - https://www.alsa-project.org/files/pub/lib/alsa-lib-1.2.8.tar.bz2 : 1ab01b74e33425ca99c2e36c0844fd6888273193bd898240fe8f93accbcbf347
+summary     : Library to interface with ALSA in the Linux kernel and virtual devices
+description : |
+    The alsa-lib is a library to interface with ALSA in the Linux kernel and virtual devices using a plugin system.
+license     :
+    - LGPL-2.1-or-later
+setup       : |
+    %configure
+build       : |
+    %make
+install     : |
+    %make_install
+packages    :
+    # Until https://github.com/serpent-os/boulder/issues/46 is fixed.
+    - "%(name)-devel":
+        files:
+            - "%(datadir)/aclocal"
