@@ -20,8 +20,3 @@ build       : |
     %make
 install     : |
     %make_install
-packages    :
-    # Until https://github.com/serpent-os/boulder/issues/46 is fixed.
-    - "%(name)-devel":
-        files:
-            - "%(datadir)/aclocal"
