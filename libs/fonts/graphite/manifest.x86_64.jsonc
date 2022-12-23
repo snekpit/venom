@@ -12,9 +12,7 @@
 			"files": [
 				"/usr/bin/gr2fonttest",
 				"/usr/lib/libgraphite2.so.3",
-				"/usr/lib/libgraphite2.so.3.2.1",
-				"/usr/share/graphite2/graphite2-release.cmake",
-				"/usr/share/graphite2/graphite2.cmake"
+				"/usr/lib/libgraphite2.so.3.2.1"
 			],
 			"name": "graphite",
 			"provides": [
@@ -29,7 +27,9 @@
 				"/usr/include/graphite2/Segment.h",
 				"/usr/include/graphite2/Types.h",
 				"/usr/lib/libgraphite2.so",
-				"/usr/lib/pkgconfig/graphite2.pc"
+				"/usr/lib/pkgconfig/graphite2.pc",
+				"/usr/share/graphite2/graphite2-release.cmake",
+				"/usr/share/graphite2/graphite2.cmake"
 			],
 			"name": "graphite-devel",
 			"provides": [
