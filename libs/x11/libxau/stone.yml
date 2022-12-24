@@ -27,3 +27,5 @@ packages    :
             # Maybe https://github.com/serpent-os/boulder/issues/47 ?
             # Use macros when https://github.com/serpent-os/moss-format/issues/2 is closed.
             - "/usr/share/man/man3"
+        rundeps:
+            - pkgconfig(xproto)
