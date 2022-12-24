@@ -27,3 +27,7 @@ build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    - "%(name)-devel":
+        rundeps:
+            - pkgconfig(libffi)
