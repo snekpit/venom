@@ -18,7 +18,6 @@
 		"libxau-devel": {
 			"files": [
 				"/usr/include/X11/Xauth.h",
-				"/usr/lib/libXau.a",
 				"/usr/lib/libXau.so",
 				"/usr/lib/pkgconfig/xau.pc",
 				"/usr/share/man/man3/Xau.3",

@@ -16,7 +16,7 @@ license     : MIT
 builddeps   :
     - pkgconfig(xproto)
 setup       : |
-    %configure
+    %configure --disable-static
 build       : |
     %make
 install     : |
