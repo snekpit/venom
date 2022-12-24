@@ -14,7 +14,6 @@ description : |
     libxcb provides an interface to the X Window System protocol, which replaces the traditional Xlib interface.
 license     : MIT
 builddeps   :
-    - binary(python3)
     - pkgconfig(xau)
     - pkgconfig(xcb-proto)
 setup       : |
@@ -26,7 +25,7 @@ install     : |
 packages    :
     - "%(name)-devel":
         paths:
-            # Maybe https://github.com/serpent-os/boulder/issues/47 ?
             # Use macros when https://github.com/serpent-os/moss-format/issues/2 is closed.
-            - "/usr/share/man/man3"
             - "/usr/share/doc"
+            # Maybe https://github.com/serpent-os/boulder/issues/47 ?
+            - "/usr/share/man/man3"
