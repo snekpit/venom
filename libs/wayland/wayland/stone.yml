@@ -29,5 +29,9 @@ install     : |
     %meson_install
 packages    :
     - "%(name)-devel":
+        paths:
+            # Use macros when https://github.com/serpent-os/moss-format/issues/2 is fixed.
+            - /usr/bin/wayland-scanner
+            - /usr/share
         rundeps:
             - pkgconfig(libffi)
