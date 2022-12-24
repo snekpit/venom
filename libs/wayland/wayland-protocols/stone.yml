@@ -13,9 +13,19 @@ summary     : Contains Wayland protocols that add functionality not available in
 description : |
     %(name) contains Wayland protocols that add functionality not available in the Wayland core protocol. Such protocols either add completely new functionality, or extend the functionality of some other protocol either in Wayland core, or some other protocol in wayland-protocols.
 license     : MIT
+builddeps   :
+    - pkgconfig(wayland-client)
 setup       : |
     %meson
 build       : |
     %meson_build
 install     : |
     %meson_install
+packages    :
+    # wayland-protocols is technically *all* -devel
+    # since it contains protocol definitions.
+    - "%(name)-devel":
+        paths:
+            - /
+        rundeps:
+            - pkgconfig(wayland-scanner)
