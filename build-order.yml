@@ -1,7 +1,6 @@
 tier2:
 - fuse3
 - kakoune
-- opendoas
 - strace
 - tree
 - vtm
