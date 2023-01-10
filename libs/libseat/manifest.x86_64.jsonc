@@ -1,0 +1,42 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"libseat": {
+			"build-depends": [
+				"pkgconfig(systemd)"
+			],
+			"depends": [
+				"soname(libc.so.6(x86_64))",
+				"soname(libsystemd.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/lib/libseat.so.1"
+			],
+			"name": "libseat",
+			"provides": [
+				"soname(libseat.so.1(x86_64))"
+			]
+		},
+		"libseat-devel": {
+			"build-depends": [
+				"pkgconfig(systemd)"
+			],
+			"depends": [
+				"pkgconfig(libsystemd)"
+			],
+			"files": [
+				"/usr/include/libseat.h",
+				"/usr/lib/libseat.so",
+				"/usr/lib/pkgconfig/libseat.pc"
+			],
+			"name": "libseat-devel",
+			"provides": [
+				"pkgconfig(libseat)"
+			]
+		}
+	},
+	"source-name": "libseat",
+	"source-release": "1",
+	"source-version": "0.7.0"
+}
