@@ -1,0 +1,26 @@
+#
+# SPDX-FileCopyrightText: © 2020-2023 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : benchmarking-tools 
+version     : 1
+release     : 1
+homepage    : https://github.com/sunnyflunk/benchmarking-tools
+upstreams   :
+    - https://github.com/sunnyflunk/benchmarking-tools/archive/refs/heads/main.tar.gz : 10037e1df9f5d743c02a46c95493896e54a710faa78110f56728e4ea6b6629b7
+summary     : Scripts to easily facilitate benchmarking on Linux
+description : |
+    Scripts to easily facilitate benchmarking on Linux.
+license     :
+    - MIT
+install     : |
+    sed -i 's/~/${PWD}/' common/variables.sh
+    %install_dir %(installroot)/usr/bin
+    %install_dir %(installroot)/usr/share/benchmarking-tools
+    cp -a * %(installroot)/usr/share/benchmarking-tools/
+
+    for bin in analyze-benchmark generate-power-results generate-results run-benchmark run-power-benchmark valgrind-benchmark; do
+         ln -sf /usr/share/benchmarking-tools/${bin}.sh %(installroot)/usr/bin/${bin}
+    done
+
