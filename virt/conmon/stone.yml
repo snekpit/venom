@@ -1,0 +1,26 @@
+#
+# SPDX-FileCopyrightText: © 2020-2023 Serpent OS Developers
+#
+# SPDX-License-Identifier: Zlib
+#
+name        : conmon
+version     : 2.1.6
+release     : 1
+homepage    : https://github.com/containers/conmon
+upstreams   :
+    - https://github.com/containers/conmon/archive/refs/tags/v2.1.6.tar.gz : 340453f7aac43e6a1f9a5efe31f24471f8a7a997a849ad6d1ff3fb530a9e2874
+summary     : OCI container runtime monitor
+description : |
+    Conmon is a monitoring program and communication tool between a container manager (like Podman or CRI-O) and an OCI runtime (like runc or crun) for a single container.
+license     :
+    - Apache-2.0
+builddeps   :
+    - binary(go-md2man)
+    - pkgconfig(glib-2.0)
+    - pkgconfig(libsystemd)
+build       : |
+    %make
+    %make GOMD2MAN=go-md2man -C docs
+install     : |
+    %make_install PREFIX=%(prefix)
+    %make_install PREFIX=%(prefix) -C docs

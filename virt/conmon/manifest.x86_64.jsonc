@@ -1,0 +1,30 @@
+/** Human readable report. This is not consumed by boulder */
+{
+	"manifest-version": "0.2",
+	"packages": {
+		"conmon": {
+			"build-depends": [
+				"binary(go-md2man)",
+				"pkgconfig(glib-2.0)",
+				"pkgconfig(libsystemd)"
+			],
+			"depends": [
+				"interpreter(/usr/lib/ld-linux-x86-64.so.2(x86_64))",
+				"soname(libc.so.6(x86_64))",
+				"soname(libglib-2.0.so.0(x86_64))",
+				"soname(libsystemd.so.0(x86_64))"
+			],
+			"files": [
+				"/usr/bin/conmon",
+				"/usr/share/man/man8/conmon.8"
+			],
+			"name": "conmon",
+			"provides": [
+				"binary(conmon)"
+			]
+		}
+	},
+	"source-name": "conmon",
+	"source-release": "1",
+	"source-version": "2.1.6"
+}
