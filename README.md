@@ -6,11 +6,9 @@ This is a draft repo which will be deleted at some point in the not too distant 
 
 ## Scope
 
-Terminal-only goodies that add value in a bootable systemd-nspawn container context. No graphical packages allowed at this stage.
+Now that the official Serpent OS infra is up, working recipes should be PRed to the [main repository](https://github.com/snekpit/venom), thus leaving venom strictly as a showcase for recipes which demonstrate bugs and misfeatures with the intent of generating bug fixes/feature requests + PRs related to the tooling.
 
-The point of this repository is to have a collection of draft-quality recipes with which to flush out bugs and generate feature requests + PRs related to the tooling.
-
-The goal is also to eventually have all recipes work, at which point we can migrate them to either the main or the community recipe repos (depending on applicability)
+If you encounter specific issues with moss or boulder, report them first in the Development matrix channel in our [matrix space](https://matrix.to/#/!trFJOzhpDUejJKnPYg:matrix.org) and then go from there in terms of potentially capturing issues for the relevant tool in their respective code repos.
 
 ### Recipe tree structure
 
@@ -20,39 +18,9 @@ Note that `base/` is reserved for critical, self-hosting systemd-nspawn containe
 
 We're going to aim for consensus decisions to begin with, so everyone is expected to keep things civil. That said, if the BDFL chips in, his decisions take precedence.
 
-EDIT: Log of discussion in serpentos-devel on matrix:
-
-```
-livingsilver94
-tbh I think think categorization is strictly personal subject.
-The only tech reason is the limit in GH visualization and performance of directory walking.
-we have a dictator for a reason :3
-Ikey Doherty
-yeah, I want to limit depth for that reason
-finding the ymls + bins will take too long
-good point
-ideally 1 dir, max 2.
-there.
-if i dont like where something is ill just move it
-and we'll organise as we go
-sound good?
-livingsilver94
-perf. So now libmicrohttpd goes in net-libs and fuck everything till you decide differently
-Ikey Doherty
-grand
-otherwise we'll be hung up for days deciding semantics
-when its just a git mv away
-```
-
-### Package wishlist
-
-There's a package list in [issue #1](https://github.com/snekpit/venom/issues/1)
-
-If you encounter specific issues with moss or boulder, report them first in the serpentos-dev matrix channel in our [matrix space](https://matrix.to/#/!trFJOzhpDUejJKnPYg:matrix.org) and then go from there in terms of potentially capturing issues for the relevant tool in their respective code repos.
-
 ## Documentation
 
-As the state of the tooling is still in flux, the best thing to do to get an idea for how things work is to look at the protosnek recipes which have been transplanted into the [main snekpit recipe repo](https://github.com/snekpit/main).
+As the state of the tooling is still in flux, the best thing to do to get an idea for how things work is to look at the recipes in the [main snekpit recipe repo](https://github.com/snekpit/main).
 
 The other thing to do is to look at the macro `%actions` and `%(definitions)` in the [boulder code repo](https://github.com/serpent-os/boulder/tree/main/data/macros).
 
@@ -64,7 +32,9 @@ You are encouraged to forget everything you thought you knew about how things ar
 
 ### How to get started writing a recipe
 
-To get a basic recipe, use `boulder new -h` to get started. And no, boulder does not yet support git sources ([issue](https://github.com/serpent-os/boulder/issues/25)).
+To get a basic recipe, use `boulder new -h` to get started.
+
+Thanks to work done by our contributors, [git upstreams](https://github.com/serpent-os/boulder/issues/25) can now be used in recipes .
 
 ### The recipe `pkg/` dir and `%(pkgdir)`
 
@@ -90,10 +60,10 @@ No functional change commits use the [NFC] tag: `shells/fish: [NFC] Tweak commen
 
 ### Recipe licensing
 
-We strongly prefer the Zlib license on code and recipes due to its uncomplicated nature. `boulder new` has been updated to use a REUSE compliant Zlib header, but existing recipes will need to be updated with the following REUSE-compliant verbiage at the top:
+We only accept Zlib licensed code and recipe contributions due to Zlib's uncomplicated nature. `boulder new` has been updated to use a REUSE compliant Zlib header, but existing recipes will need to be updated with the following REUSE-compliant verbiage at the top:
 
     #
-    # SPDX-FileCopyrightText: © 2020-2022 Serpent OS Developers
+    # SPDX-FileCopyrightText: © 2020-2023 Serpent OS Developers
     #
     # SPDX-License-Identifier: Zlib
     #
